@@ -1,14 +1,26 @@
 <?php
-include './resources/head.php'; 
+include './resources/head.php';
 include './resources/https.php';
 ?>
 
+<script>
+    $(function () {
+        $('#submit').attr("disabled", true);
+
+        $('#file').change(function () {
+            if ($('#file').val().length == 0)
+                $('#submit').attr("disabled", true);
+            else
+                $('#submit').attr("disabled", false);
+        });
+    });
+</script>
 <body>
     <div class="site-wrapper">
         <div class="site-wrapper-inner">
             <div class="cover-container">
                 <?php include './resources/navbar.php'; ?>
-                <div class="inner cover">
+                <div class="inner go">
                     <h1>UpLoadMe, Uploading made simple</h1>
                     <p class="lead">
                         With UpLoadMe you can share your personal files<br>with friends without needing FTP to a server.<br>
@@ -17,19 +29,22 @@ include './resources/https.php';
 
                     <form action="./upload_file.php" method="post" enctype="multipart/form-data">
                         <center>
-                            <input class="btn btn-success" style="width: 500px; height: 100px" data-filename-placement="inside" id="file" name="file" type="file"  ><br>
+                            <input class="btn btn-success" style="width: 500px; height: 100px"  data-filename-placement="inside" id="file" name="file" type="file" /><br>
                             <br>
-                            <input type="submit" name="submit" value="Upload" class="btn btn-lg btn-default">
-                        </center>
 
+                            <input type="submit" name="submit" value="Upload" id="submit" class="btn btn-lg btn-default" disabled>
+
+                        </center>
                     </form>
                 </div>
                 <?php include './resources/footer.php'; ?>
             </div>
         </div>
     </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/docs.min.js"></script>
+    <script src="./js/disable.js"></script>
 </body>
 </html>
