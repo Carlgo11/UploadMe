@@ -2,19 +2,6 @@
 include './resources/head.php';
 include './resources/https.php';
 ?>
-
-<script>
-    $(function () {
-        $('#submit').attr("disabled", true);
-
-        $('#file').change(function () {
-            if ($('#file').val().length == 0)
-                $('#submit').attr("disabled", true);
-            else
-                $('#submit').attr("disabled", false);
-        });
-    });
-</script>
 <body>
     <div class="site-wrapper">
         <div class="site-wrapper-inner">

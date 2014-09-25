@@ -22,6 +22,11 @@ if (
         } else {
             move_uploaded_file($_FILES["file"]["tmp_name"], $conf['upload-dir'] . $_FILES["file"]["name"]);
             echo "Stored in: " . $conf['upload-dir'] . $_FILES["file"]["name"];
+            if (isset($_GET['dev']) && !empty($_GET['dev'])) {
+                if($_GET['dev'] == "true"){
+                    return true;
+                }
+            }
             header('Location: index.php?file=' . $_FILES["file"]["name"]);
         }
     }
