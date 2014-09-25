@@ -8,7 +8,7 @@ $extension = end($temp);
 
 if (
         in_array($extension, $allowedExts)) {
-    echo "Invalid file";
+    echo "Invalid file format";
 } else {
     if ($_FILES["file"]["error"] > 0) {
         echo "Return Code: " . $_FILES["file"]["error"] . "<br>";
