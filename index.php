@@ -1,7 +1,6 @@
 <?php
 
 include 'config.php';
-include './resources/https.php';
 
 if (isset($_GET['file']) && !empty($_GET['file'])) {
     $file = $_GET['file'];
@@ -11,7 +10,7 @@ if (isset($_GET['file']) && !empty($_GET['file'])) {
         $path_info = pathinfo($dir.$file);
         if($path_info['extension'] == "txt"){
             include './resources/markdown.php';
-            echo markdown($file, $dir);
+            echo markdown($dir, $file);
             return true;
         }
         header("Location: " . $dir . $file);
@@ -21,5 +20,4 @@ if (isset($_GET['file']) && !empty($_GET['file'])) {
 ?>
 
 <?php
-
 include './resources/upload.php';

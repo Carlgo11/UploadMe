@@ -13,7 +13,7 @@ echo $conf['title']; ?></title>
 
         <link href="./css/bootstrap.min.css" rel="stylesheet">
 
-        <link href="./css/page.css" rel="stylesheet">
+        <link href="./css/cover.css" rel="stylesheet">
 
         <script src="./js/bootstrap.file-input.js"></script>
 

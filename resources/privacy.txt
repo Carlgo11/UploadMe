@@ -1,0 +1,18 @@
+### How is the data you upload distributed?
+When you upload something to UpLoadMe you agree on sharing your file with everyone.  
+There is no way to only allow certain people to access it. However we disallow bots (like <a href="https://support.google.com/webmasters/answer/182072">Google</a>) to crawl the uploads folder.  
+That way only the people who know about the link to your file can access it.
+
+### What do you know about me and my file?
+We try to know as little as possible. We basically don't want to know who you are or what you're uploading.
+When you upload something to UpLoadMe no data about you is stored. We can't even see what IP you're using.
+
+
+### I want to delete my own file.
+At the moment that's a bit tricky. Since we don't know who you are, we can't know that it's really you who uploaded the file.  
+If you need to delete something, then contact support and we'll consider whether we think it's really you and if the file should be deleted.
+
+### I want to delete someone else's file since it violates some law.
+Cool, you know laws. Good for you!  
+Yes, we will cooperate with law enforcement if they file a valid warrant.  
+Keep in mind though that we know nothing about you, so there's not really anything they can gain from it.

@@ -1,6 +1,5 @@
 <?php
-include './resources/head.php';
-include './resources/https.php';
+include './resources/head-mainpage.php';
 ?>
 <body>
     <div class="site-wrapper">
