@@ -37,8 +37,8 @@ include './resources/head-mainpage.php';
                         echo $kc_o->render_js();
                         }
                         ?>
-                        <input type='email' id='email' placeholder="Your email" required="" style="margin-bottom: 20px;margin-top: 20px" class="form-control"/>
-                        <textarea rows="4" id="message" cols="50" required="" style="margin-bottom: 20px" placeholder="Message"></textarea>
+                        <input type='email' id='email' name="email" placeholder="Your email" required="" style="margin-bottom: 20px;margin-top: 20px" class="form-control"/>
+                        <textarea rows="4" id="message" name="message" cols="50" required="" style="margin-bottom: 20px" placeholder="Message"></textarea>
                         
 
                         <input type="hidden" name="capcode" id="capcode" value="false" />
