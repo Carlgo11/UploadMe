@@ -5,7 +5,8 @@ include './resources/head-mainpage.php';
     <div class="site-wrapper">
         <div class="site-wrapper-inner">
             <div class="cover-container">
-                <?php include './resources/navbar.php'; ?>
+                <?php include './resources/navbar.php';
+                getNavBar("contact") ?>
                 <div id="container" style="margin-top: 200px;">
                     <h2>Contact</h2>
                     <?php
@@ -40,7 +41,7 @@ include './resources/head-mainpage.php';
                     }
                     ?>
                 </div>
-                <?php include './resources/footer.php'; ?>
+<?php include './resources/footer.php'; ?>
             </div>
         </div>
     </div>

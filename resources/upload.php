@@ -5,7 +5,7 @@ include './resources/head-mainpage.php';
     <div class="site-wrapper">
         <div class="site-wrapper-inner">
             <div class="cover-container">
-                <?php include './resources/navbar.php'; ?>
+                <?php include './resources/navbar.php';                getNavBar("home"); ?>
                 <div class="inner go">
                     <h1>UpLoadMe, Uploading made simple</h1>
                     <p class="lead">
