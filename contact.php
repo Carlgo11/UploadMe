@@ -21,8 +21,8 @@ include './resources/head-mainpage.php';
                             if (isset($_POST['capcode'])) {
                                 if ($kc_o->check_result($_POST['capcode'])) {
                                     $sent = true;
-                                    $email = $_GET['email'];
-                                    $message = $_GET['message'];
+                                    $email = $_POST['email'];
+                                    $message = $_POST['message'];
                                     mail("carlgo11@carlgo11.com", "New mail from ".$email, "Hello,<br>You've recived a new question from: ".$email."<br>Message:".$message);
                                    echo '<div class="alert alert-success" role="alert">Email sent!</div>';
                                 } else {
