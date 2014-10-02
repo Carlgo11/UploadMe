@@ -5,7 +5,6 @@ include './resources/head-mainpage.php';
     <div class="site-wrapper">
         <div class="site-wrapper-inner">
             <div class="cover-container">
-
                 <?php include './resources/navbar.php'; ?>
                 <div id="container" style="margin-top: 200px;">
                     <h2>Contact
@@ -16,29 +15,26 @@ include './resources/head-mainpage.php';
                         session_start();
                         
                             if (!class_exists('KeyCAPTCHA_CLASS')) {
-                                // Replace '/home/path_to_keycaptcha_file/' with the real path to keycaptcha.php
                                 include('./resources/keycaptcha.php');
                             }
                             $kc_o = new KeyCAPTCHA_CLASS();
                             if (isset($_POST['capcode'])) {
                                 if ($kc_o->check_result($_POST['capcode'])) {
-                                   echo '<div class="alert alert-success" role="alert">lalala</div>';
+                                    $sent = true;
+                                   echo '<div class="alert alert-success" role="alert">Email sent!</div>';
                                    mail("carlgo11@carlgo11.com", "test", "message");
                                 } else {
                                    // incorrect
                                    
-                                    
-                                    
                                 }
                             }
-                        
+                        if(!$sent){
                         if (!class_exists('KeyCAPTCHA_CLASS')) {
-                            // Replace '/home/path_to_keycaptcha_file/' with the real path to keycaptcha.php
                             include('./resources/keycaptcha.php');
                         }
                         $kc_o = new KeyCAPTCHA_CLASS();
                         echo $kc_o->render_js();
-                  
+                        }
                         ?>
                         <input type='email' id='email' placeholder="Your email" required="" style="margin-bottom: 20px;margin-top: 20px" class="form-control"/>
                         <textarea rows="4" cols="50" required="" style="margin-bottom: 20px" placeholder="Message"></textarea>
@@ -47,7 +43,6 @@ include './resources/head-mainpage.php';
                         <input type="hidden" name="capcode" id="capcode" value="false" />
                         <input type="submit" value="Send" id="postbut" class="btn btn-success" />
                     </form>
-
                 </div>
 <?php include './resources/footer.php'; ?>
             </div>
