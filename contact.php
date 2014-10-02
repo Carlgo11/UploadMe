@@ -23,7 +23,7 @@ include './resources/head-mainpage.php';
                                     $sent = true;
                                     $email = $_POST['email'];
                                     $message = $_POST['message'];
-                                    mail("carlgo11@carlgo11.com", "New mail from ".$email, "Hello,<br>You've recived a new question from: ".$email."<br>Message:".$message);
+                                    mail("carlgo11@carlgo11.com", "New mail from ".$email, "Hello,\nYou've recived a new question from: ".$email."\n\nMessage:".$message);
                                    echo '<div class="alert alert-success" role="alert">Email sent!</div>';
                                 } else {
                                    // incorrect
