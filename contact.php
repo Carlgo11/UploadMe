@@ -21,14 +21,15 @@ include './resources/head-mainpage.php';
                             if (isset($_POST['capcode'])) {
                                 if ($kc_o->check_result($_POST['capcode'])) {
                                     $sent = true;
+                                    $email = $_GET['email'];
+                                    $message = $_GET['message'];
+                                    mail("carlgo11@carlgo11.com", "New mail from ".$email, "Hello,<br>You've recived a new question from: ".$email."<br>Message:".$message);
                                    echo '<div class="alert alert-success" role="alert">Email sent!</div>';
-                                   mail("carlgo11@carlgo11.com", "test", "message");
                                 } else {
                                    // incorrect
-                                   
                                 }
                             }
-                        if(!$sent){
+                        if(!isset($sent) || !$sent){
                         if (!class_exists('KeyCAPTCHA_CLASS')) {
                             include('./resources/keycaptcha.php');
                         }
@@ -37,7 +38,7 @@ include './resources/head-mainpage.php';
                         }
                         ?>
                         <input type='email' id='email' placeholder="Your email" required="" style="margin-bottom: 20px;margin-top: 20px" class="form-control"/>
-                        <textarea rows="4" cols="50" required="" style="margin-bottom: 20px" placeholder="Message"></textarea>
+                        <textarea rows="4" id="message" cols="50" required="" style="margin-bottom: 20px" placeholder="Message"></textarea>
                         
 
                         <input type="hidden" name="capcode" id="capcode" value="false" />
