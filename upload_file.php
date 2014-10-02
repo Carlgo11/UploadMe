@@ -18,17 +18,12 @@ if (
         echo "Size: " . ($_FILES["file"]["size"] / 1024) . " kB<br>";
         echo "Temp file: " . $_FILES["file"]["tmp_name"] . "<br>";
         if (file_exists($conf['upload-dir'] . $_FILES["file"]["name"])) {
-            echo $_FILES["file"]["name"] . " already exists. ";
+            move_uploaded_file($_FILES["file"]["tmp_name"], $conf['upload-dir'] . $_FILES["file"]["name"]."1"); //Fix this to a random filename later
         } else {
             move_uploaded_file($_FILES["file"]["tmp_name"], $conf['upload-dir'] . $_FILES["file"]["name"]);
-            echo "Stored in: " . $conf['upload-dir'] . $_FILES["file"]["name"];
-            if (isset($_GET['dev']) && !empty($_GET['dev'])) {
-                if($_GET['dev'] == "true"){
-                    return true;
-                }
-            }
-            header('Location: index.php?file=' . $_FILES["file"]["name"]);
+            
         }
+        header('Location: index.php?file=' . $_FILES["file"]["name"]);
     }
 }
 ?>
