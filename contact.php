@@ -7,9 +7,7 @@ include './resources/head-mainpage.php';
             <div class="cover-container">
                 <?php include './resources/navbar.php'; ?>
                 <div id="container" style="margin-top: 200px;">
-                    <h2>Contact
-                    </h2>
-                    <p>Fill in a message to us below and we'll get back to you as soon as possible.</p>
+                    <h2>Contact</h2>
                     <?php
                     session_start();
 
@@ -23,9 +21,7 @@ include './resources/head-mainpage.php';
                             $email = $_POST['email'];
                             $message = $_POST['message'];
                             mail("carlgo11@carlgo11.com", "New mail from " . $email, "Hello,\nYou've recived a new question from: " . $email . "\n\nMessage:\n" . $message);
-                            echo '<div class="alert alert-success" role="alert" style="height: 100px">Email sent!<br><br>A reply will be sent to:' . $email . '.</div>';
-                        } else {
-                            // incorrect
+                            echo '<div class="alert alert-success" role="alert" style="height: 100px">Email sent!<br><br>Thank you for your email. A reply will be sent to:' . $email . '.</div>';
                         }
                     }
                     if (!isset($sent) || !$sent) {
@@ -33,6 +29,7 @@ include './resources/head-mainpage.php';
                             include('./resources/keycaptcha.php');
                         }
                         $kc_o = new KeyCAPTCHA_CLASS();
+                        echo '<p>Fill in a message to us below and we\'ll get back to you as soon as possible.</p>';
                         echo '<form method="POST" action="" style="width: 200px;vertical-align: middle;margin-left: 120px">';
                         echo $kc_o->render_js();
                         echo '<input type="email" id="email" name="email" placeholder="Your email" required="" style="margin-bottom: 20px;margin-top: 20px" class="form-control"/>
@@ -42,8 +39,6 @@ include './resources/head-mainpage.php';
                         echo '</form>';
                     }
                     ?>
-
-
                 </div>
                 <?php include './resources/footer.php'; ?>
             </div>
