@@ -6,8 +6,9 @@ include './resources/head-mainpage.php';
         <div class="site-wrapper-inner">
             <div class="cover-container">
                 <?php include './resources/navbar.php';
-                getNavBar("contact") ?>
-                <div id="container" style="margin-top: 200px;">
+                getNavBar("contact")
+                ?>
+                <div class="inner go">
                     <h2>Contact</h2>
                     <?php
                     session_start();
@@ -30,14 +31,12 @@ include './resources/head-mainpage.php';
                             include('./resources/keycaptcha.php');
                         }
                         $kc_o = new KeyCAPTCHA_CLASS();
-                        echo '<p>Fill in a message to us below and we\'ll get back to you as soon as possible.</p>';
-                        echo '<form method="POST" action="" style="width: 200px;vertical-align: middle;margin-left: 120px">';
+                        echo '<p>Fill in a message to us below and we\'ll get back to you as soon as possible.</p><form method="POST" action="" style="width: 200px;vertical-align: middle;margin-left: 100px">';
                         echo $kc_o->render_js();
                         echo '<input type="email" id="email" name="email" placeholder="Your email" required="" style="margin-bottom: 20px;margin-top: 20px" class="form-control"/>
                         <textarea rows="4" id="message" name="message" cols="50" required="" style="margin-bottom: 20px" placeholder="Message"></textarea>
                         <input type="hidden" name="capcode" id="capcode" value="false" />
-                        <input type="submit" value="Send" id="postbut" class="btn btn-success" />';
-                        echo '</form>';
+                        <input type="submit" value="Send" id="postbut" class="btn btn-success btn-lg" /></form>';
                     }
                     ?>
                 </div>
