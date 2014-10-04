@@ -7,14 +7,13 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <link rel="shortcut icon" type="image/icon" href="./resources/media/logo.png"/>
-
-        <title><?php include './config.php';
-echo $conf['title']; ?></title>
-
+        <title>
+            <?php
+            include './config.php';
+            echo $conf['title'];
+            ?>
+        </title>
         <link href="./css/bootstrap.min.css" rel="stylesheet">
-
         <link href="./css/cover.css" rel="stylesheet">
-
         <script src="./js/bootstrap.file-input.js"></script>
-
     </head>
