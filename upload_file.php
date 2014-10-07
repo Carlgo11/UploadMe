@@ -31,5 +31,3 @@ if (
         header('Location: index.php?file=' . $name . "." . $extension);
     }
 }
-
-
