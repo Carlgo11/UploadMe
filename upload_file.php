@@ -27,5 +27,5 @@ if ($_FILES["file"]["error"] > 0) {
     $query = $con->prepare("INSERT INTO `" . $conf['mysql-table'] . "` (`name`, `size`, `type`, `content`) VALUES (?, ?, ?, ?);");
     $query->bind_param("ssss", $name , $_FILES['file']['size'], $_FILES['file']['type'], $content);
     $query->execute();
-    header('Location: index.php?file=' . $name);
+    header('Location: done.php?file=' . $name);
 }
