@@ -23,7 +23,7 @@ if ($_FILES["file"]["error"] > 0) {
     fclose($fp);
 
     $name = getName().".".$extension;
-    $con = mysqli_connect($conf['mysql-url'], $conf['mysql-user'], $conf['mysql-password'], $conf['mysql-db']) or die("Connection problem.");
+    $con = mysqli_connect($conf['mysql-url'], $conf['mysql-user'], $conf['mysql-password'], $conf['mysql-db']) or die(); 
     $query = $con->prepare("INSERT INTO `" . $conf['mysql-table'] . "` (`name`, `size`, `type`, `content`) VALUES (?, ?, ?, ?);");
     $query->bind_param("ssss", $name , $_FILES['file']['size'], $_FILES['file']['type'], $content);
     $query->execute();

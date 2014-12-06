@@ -1,9 +1,9 @@
 <?php
 
-function getNavBar($page) {
+function getNavBar($page = null) {
     echo '<div class="masthead clearfix">
     <div class="inner">
-        <a href="./"><h3 class="masthead-brand">UpLoadMe<img height="32" width="32" src="./resources/media/logo.png"> (ALPHA)</h3></a>
+        <a href="./"><h3 class="masthead-brand">UpLoadMe<img height="32" width="32" src="./resources/media/logo.png"></h3></a>
         <ul class="nav masthead-nav">';
     if ($page == "home") {
         echo '<li class="active"><a href="">Home</a></li>';

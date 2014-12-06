@@ -11,7 +11,7 @@ if (isset($_GET['file']) && $_GET['file'] != null) {
             <div class="cover-container">
                 <?php
                 include './resources/navbar.php';
-                getNavBar("home");
+                getNavBar();
                 ?>
                 <div class="inner go">
                     <h1>Success!</h1><br><p class="lead">Use this link to download your file:</p>
