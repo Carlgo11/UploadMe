@@ -3,31 +3,29 @@
 function getName() {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $randomString = '';
-    for ($i = 0; $i < 10; $i++) {
+    for ($i = 0; $i < 15; $i++) {
         $randomString .= $characters[rand(0, strlen($characters) - 1)];
     }
     return $randomString;
 }
 
 include './config.php';
-
-$allowedExts = array("php", "exe", "bat", "iso", "msi");
 $temp = explode(".", $_FILES["file"]["name"]);
 $extension = end($temp);
 
-if (
-        in_array($extension, $allowedExts)) {
-    echo "Invalid file format";
+if ($_FILES["file"]["error"] > 0) {
+    echo "Return Code: " . $_FILES["file"]["error"] . "<br>";
 } else {
-    if ($_FILES["file"]["error"] > 0) {
-        echo "Return Code: " . $_FILES["file"]["error"] . "<br>";
-    } else {
-        $name = getName();
-        if (file_exists($conf['upload-dir'] . $name)) {
-            move_uploaded_file($_FILES["file"]["tmp_name"], $conf['upload-dir'] . $name . getName() . $extension); //Fix this to a random filename later
-        } else {
-            move_uploaded_file($_FILES["file"]["tmp_name"], $conf['upload-dir'] . $name . "." . $extension);
-        }
-        header('Location: index.php?file=' . $name . "." . $extension);
-    }
+    $tmpName = $_FILES['file']['tmp_name'];
+    $fp = fopen($tmpName, 'r');
+    $content = fread($fp, filesize($tmpName));
+    $content = addslashes($content);
+    fclose($fp);
+
+    $name = getName().".".$extension;
+    $con = mysqli_connect($conf['mysql-url'], $conf['mysql-user'], $conf['mysql-password'], $conf['mysql-db']) or die("Connection problem.");
+    $query = $con->prepare("INSERT INTO `" . $conf['mysql-table'] . "` (`name`, `size`, `type`, `content`) VALUES (?, ?, ?, ?);");
+    $query->bind_param("ssss", $name , $_FILES['file']['size'], $_FILES['file']['type'], $content);
+    $query->execute();
+    header('Location: index.php?file=' . $name);
 }
