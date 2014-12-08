@@ -1,9 +1,9 @@
 <?php
 
-function getName() {
+function getName($n) {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $randomString = '';
-    for ($i = 0; $i < 15; $i++) {
+    for ($i = 0; $i < $n; $i++) {
         $randomString .= $characters[rand(0, strlen($characters) - 1)];
     }
     return $randomString;
@@ -22,10 +22,13 @@ if ($_FILES["file"]["error"] > 0) {
     $content = addslashes($content);
     fclose($fp);
 
-    $name = getName().".".$extension;
+    $name = getName(15).".".$extension;
+    $rmcode = getName(32);
     $con = mysqli_connect($conf['mysql-url'], $conf['mysql-user'], $conf['mysql-password'], $conf['mysql-db']) or header('Location: ./mysql-error.php');
-    $query = $con->prepare("INSERT INTO `" . $conf['mysql-table'] . "` (`name`, `size`, `type`, `content`) VALUES (?, ?, ?, ?);");
-    $query->bind_param("ssss", $name , $_FILES['file']['size'], $_FILES['file']['type'], $content);
+    $query = $con->prepare("INSERT INTO `" . $conf['mysql-table'] . "` (`name`, `size`, `type`, `content`, `removalcode`) VALUES (?, ?, ?, ?, ?);");
+    $query->bind_param("sssss", $name , $_FILES['file']['size'], $_FILES['file']['type'], $content, $rmcode);
     $query->execute();
+    session_start();
+    $_SESSION["rmcode"] = $rmcode;
     header('Location: done.php?file=' . $name);
 }

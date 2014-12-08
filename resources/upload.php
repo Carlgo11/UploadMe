@@ -12,7 +12,7 @@ include './resources/head-mainpage.php';
                 <div class="inner go">
                     <h1>UpLoadMe, Uploading made simple</h1>
                     <p class="lead">
-                        With UpLoadMe you can share your personal files<br>with friends without needing FTP to a server.<br>
+                        With UpLoadMe you can share your personal files<br>with friends without needing FTP to a server or giving out your personal information to a company like Google or Dropbox.<br>
                         Simply Drop the file in the green area and click Upload
                     </p>
                     <form action="./upload_file.php" method="post" enctype="multipart/form-data">

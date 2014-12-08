@@ -3,7 +3,7 @@
 if(isset($_GET['file']) && $_GET['file'] != null){
 $file = $_GET['file'];
 include './config.php';
-$con = mysqli_connect($conf['mysql-url'], $conf['mysql-user'], $conf['mysql-password'], $conf['mysql-db']) or die("Connection problem.");
+$con = mysqli_connect($conf['mysql-url'], $conf['mysql-user'], $conf['mysql-password'], $conf['mysql-db']) or header('Location: ./mysql-error.php');
     $query = $con->prepare("SELECT name, type, size, content FROM `" . $conf['mysql-table'] . "` WHERE `name` = ?");
     $query->bind_param("s", $_GET['file']);
     $query->execute();

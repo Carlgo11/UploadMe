@@ -17,6 +17,12 @@ function getNavBar($page = null) {
         echo '<li><a href="./contact.php">Contact</a></li>';
     }
 
+    if($page == "remove"){
+        echo '<li class="active"><a href="">Remove</a></li>';
+    }else{
+        echo '<li><a href="./remove.php">Remove</a></li>';
+    }
+    
     if ($page == "privacy") {
         echo '<li class="active"><a href="">Privacy</a></li>';
     } else {
