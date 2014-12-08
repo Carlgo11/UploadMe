@@ -2,7 +2,7 @@
 include './resources/head-mainpage.php';
 if(isset($_POST['postbut'])){
     include 'config.php';
-        $con = mysqli_connect($conf['mysql-url'], $conf['mysql-user'], $conf['mysql-password'], $conf['mysql-db']) or die("Connection problem.");
+        $con = mysqli_connect($conf['mysql-url'], $conf['mysql-user'], $conf['mysql-password'], $conf['mysql-db']) or header('Location: ./mysql-error.php');
 
         $s = "SELECT COUNT(*) AS num FROM `" . $conf['mysql-table'] . "` WHERE `removalcode` = ?";
         $query = $con->prepare($s);
@@ -43,7 +43,7 @@ if(isset($_POST['postbut'])){
                         If you did not upload the file please go to the <a href="./privacy.php">privacy</a> tab.</p>
                     <form method="POST" action="">
                         <center>
-                        <input type="text" id="rmcode" name="rmcode" placeholder="Removal-code" required=""  maxlength="32" style="margin-bottom: 20px;margin-top: 20px;width: 300px;text-align: center" class="form-control"/>
+                        <input type="text" id="rmcode" name="rmcode" placeholder="Removal-code" required=""  maxlength="32" style="margin-bottom: 20px;margin-top: 20px;width: 500px;text-align: center" class="form-control"/>
                         </center>
                         <input type="submit" value="Delete" id="postbut" name="postbut" class="btn btn-danger btn-lg" />
                     </form>
