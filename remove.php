@@ -1,6 +1,25 @@
 <?php
 include './resources/head-mainpage.php';
 if(isset($_POST['postbut'])){
+    include 'config.php';
+        $con = mysqli_connect($conf['mysql-url'], $conf['mysql-user'], $conf['mysql-password'], $conf['mysql-db']) or die("Connection problem.");
+
+        $s = "SELECT COUNT(*) AS num FROM `" . $conf['mysql-table'] . "` WHERE `removalcode` = ?";
+        $query = $con->prepare($s);
+        $query->bind_param("s", $_POST['rmcode']);
+        $query->execute();
+        $result = $query->get_result();
+        while ($row = $result->fetch_array(MYSQLI_NUM)) {
+            foreach ($row as $r) {
+                if ($r == 1) {
+                    $st = "DELETE FROM ".$conf['mysql-table']." WHERE `removalcode` = ?";
+                    $q = $con->prepare($st);
+                    $q->bind_param("s", $_POST['rmcode']);
+                    $q->execute();
+                    $output = "Removed 1 file. It's like it never existed!";
+                }
+            }
+        }
 }
 ?>
 <body>
@@ -12,6 +31,12 @@ if(isset($_POST['postbut'])){
                 getNavBar("remove");
                 ?>
                 <div class="inner go">
+                    <?php
+                    if(isset($output) && $output != null){?>
+                    <div class="alert alert-success"><?php echo $output?></div>
+                    <?php
+                    }
+                    ?>
                     <h1>Removing files</h1><br>
                     <p class="lead">When uploading a file you recived a removal-code.<br>
                         Enter that code below to remove your file.<br>
