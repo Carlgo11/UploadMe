@@ -35,8 +35,10 @@ if(isset($_POST['postbut'])){
                     if(isset($output) && $output != null){?>
                     <div class="alert alert-success"><?php echo $output?></div>
                     <?php
-                    }
+                    }elseif(isset($_POST['postbut'])){
                     ?>
+                    <div class="alert alert-danger">Incorrect removal-code</div>
+                    <?php } ?>
                     <h1>Removing files</h1><br>
                     <p class="lead">When uploading a file you recived a removal-code.<br>
                         Enter that code below to remove your file.<br>
