@@ -1,22 +1,22 @@
-<?php include './resources/head.php'; ?>
+<?php include './res/head.php'; ?>
 <body>
     <div class="site-wrapper">
         <div class="site-wrapper-inner">
             <div class="cover-container">
                 <?php
-                include './resources/navbar.php';
+                include './res/navbar.php';
                 getNavBar("privacy")
                 ?>
                 <div id="container" style="margin-top: 200px">
                     <div id="title"><center><h2>Privacy</h2></center></div>
                     <div>
                         <?php
-                        include './resources/markdown.php';
-                        echo markdown("./resources/", "privacy.txt");
+                        include './res/markdown.php';
+                        echo markdown("./res/", "privacy.txt");
                         ?>
                     </div>
                 </div>
-                <?php include './resources/footer.php'; ?>
+                <?php include './res/footer.php'; ?>
             </div>
         </div>
     </div>

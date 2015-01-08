@@ -1,12 +1,12 @@
 <?php
-include './resources/head-mainpage.php';
+include './res/head-mainpage.php';
 ?>
 <body>
     <div class="site-wrapper">
         <div class="site-wrapper-inner">
             <div class="cover-container">
                 <?php
-                include './resources/navbar.php';
+                include './res/navbar.php';
                 getNavBar("contact")
                 ?>
                 <div class="inner go">
@@ -15,7 +15,7 @@ include './resources/head-mainpage.php';
                     session_start();
 
                     if (!class_exists('KeyCAPTCHA_CLASS')) {
-                        include('./resources/keycaptcha.php');
+                        include('./res/keycaptcha.php');
                     }
                     $kc_o = new KeyCAPTCHA_CLASS();
                     if (isset($_POST['capcode'])) {
@@ -29,7 +29,7 @@ include './resources/head-mainpage.php';
                     }
                     if (!isset($sent) || !$sent) {
                         if (!class_exists('KeyCAPTCHA_CLASS')) {
-                            include('./resources/keycaptcha.php');
+                            include('./res/keycaptcha.php');
                         }
                         $kc_o = new KeyCAPTCHA_CLASS();
                         echo '<p>Fill in a message to us below and we\'ll get back to you as soon as possible.</p><form method="POST" action="" style="width: 200px;vertical-align: middle;margin-left: 100px">';
@@ -41,7 +41,7 @@ include './resources/head-mainpage.php';
                     }
                     ?>
                 </div>
-                <?php include './resources/footer.php'; ?>
+                <?php include './res/footer.php'; ?>
             </div>
         </div>
     </div>

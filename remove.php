@@ -1,5 +1,5 @@
 <?php
-include './resources/head-mainpage.php';
+include './res/head-mainpage.php';
 if (isset($_POST['postbut'])) {
     include 'config.php';
     $con = mysqli_connect($conf['mysql-url'], $conf['mysql-user'], $conf['mysql-password'], $conf['mysql-db']) or header('Location: ./mysql-error.php');
@@ -27,7 +27,7 @@ if (isset($_POST['postbut'])) {
         <div class="site-wrapper-inner">
             <div class="cover-container">
                 <?php
-                include './resources/navbar.php';
+                include './res/navbar.php';
                 getNavBar("remove");
                 ?>
                 <div class="inner go">
@@ -49,7 +49,7 @@ if (isset($_POST['postbut'])) {
                         <input type="submit" value="Delete" id="postbut" name="postbut" class="btn btn-danger btn-lg" />
                     </form>
                 </div>
-                <?php include './resources/footer.php'; ?>
+                <?php include './res/footer.php'; ?>
             </div>
         </div>
     </div>

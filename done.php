@@ -1,6 +1,6 @@
 <?php
 if (isset($_GET['file']) && $_GET['file'] != null) {
-    include './resources/head-mainpage.php';
+    include './res/head-mainpage.php';
 } else {
     header("Location: ./");
 }
@@ -10,7 +10,7 @@ if (isset($_GET['file']) && $_GET['file'] != null) {
         <div class="site-wrapper-inner">
             <div class="cover-container">
                 <?php
-                include './resources/navbar.php';
+                include './res/navbar.php';
                 getNavBar();
                 ?>
                 <div class="inner go">
@@ -28,7 +28,7 @@ if (isset($_GET['file']) && $_GET['file'] != null) {
                         <p>Keep this code secret and in a good place.<br>You'll need it if you ever want to remove the file from the system.</p>
                     </center>
                 </div>
-                <?php include './resources/footer.php'; ?>
+                <?php include './res/footer.php'; ?>
             </div>
         </div>
     </div>

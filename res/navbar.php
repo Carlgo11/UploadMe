@@ -4,7 +4,7 @@ function getNavBar($page = null) {
     ?>
     <div class="masthead clearfix">
         <div class="inner">
-            <a href="./"><h3 class="masthead-brand">UpLoadMe<img height="32" width="32" src="./resources/media/logo.png"></h3></a>
+            <a href="./"><h3 class="masthead-brand">UpLoadMe<img height="32" width="32" src="./res/media/logo.png"></h3></a>
             <ul class="nav masthead-nav">
                 <?php
                 if ($page == "home") {

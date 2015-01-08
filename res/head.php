@@ -6,8 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Simple way to upload files">
         <meta name="author" content="carlgo11">
-        <META HTTP-EQUIV='Pragma' CONTENT='no-cache'> 
-        <META HTTP-EQUIV='Cache-Control' CONTENT='no-cache'> 
+        <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+        <META HTTP-EQUIV="Expires" CONTENT="-1">
         <link rel="shortcut icon" type="image/icon" href="./resources/media/logo.png"/>
         <title>
             <?php

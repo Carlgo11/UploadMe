@@ -1,13 +1,13 @@
 <?php
 include 'config.php';
-include './resources/head-mainpage.php';
+include './res/head-mainpage.php';
 ?>
 <body>
     <div class="site-wrapper">
         <div class="site-wrapper-inner">
             <div class="cover-container">
                 <?php
-                include './resources/navbar.php';
+                include './res/navbar.php';
                 getNavBar("home");
                 ?>
                 <div class="inner go">
@@ -24,7 +24,7 @@ include './resources/head-mainpage.php';
                         </center>
                     </form>
                 </div>
-                <?php include './resources/footer.php'; ?>
+                <?php include './res/footer.php'; ?>
             </div>
         </div>
     </div>
