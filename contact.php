@@ -1,5 +1,6 @@
 <?php
 include './res/head-mainpage.php';
+include './config.php';
 ?>
 <body>
     <div class="site-wrapper">
@@ -23,7 +24,13 @@ include './res/head-mainpage.php';
                             $sent = true;
                             $email = $_POST['email'];
                             $message = $_POST['message'];
-                            mail("carlgo11@carlgo11.com", "New mail from " . $email, "Hello,\nYou've recived a new question from: " . $email . "\n\nMessage:\n" . $message);
+                            $to = $conf['email-reciver'];
+                            $subject = "New mail from " . $email;
+                            $message = "Hello,\nYou've recived a new message from: " . $email . "\n\nMessage:\n" . $message;
+                            $headers = 'From: ' . $_POST['email'] . "\r\n" .
+                                    'Reply-To: ' . $_POST["email"] . '' . "\r\n" .
+                                    'X-Mailer: PHP/' . phpversion();
+                            mail($to, $subject, $message);
                             echo '<div class="alert alert-success" role="alert" style="height: 100px">Email sent!<br><br>Thank you for your email. A reply will be sent to:' . $email . '.</div>';
                         }
                     }
