@@ -19,5 +19,5 @@ If you've lost your removal-code there's no way of removing your file. (That's w
 
 ### I want to delete someone else's file since it violates some law.
 Cool, you know laws. Good for you!  
-Yes, we will cooperate with law enforcement if they file a warrant that's valid under Swedish law (Since the site is hosted in Sweden).
+Yes, we will cooperate with law enforcement if they file a takedown request that's valid under Swedish law (Since the site is hosted in Sweden).
 Keep in mind though that we know nothing about you, so there's not really anything they can gain from it.
