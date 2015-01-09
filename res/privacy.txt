@@ -2,10 +2,16 @@
 When you upload something to UpLoadMe you agree on sharing your file with everyone.  
 There is no way to only allow certain people to access it. However bots like (like <a href="https://support.google.com/webmasters/answer/182072">Google</a>) can't find your file.  
 
+### What about files with passwords?
+Files with passwords are encrypted directly when uploaded. We can't see what the file contains without the password.  
+Password protected files are handled the same was as those without passwords when uploaded. We don't scan the files for viruses or illegal content like Google does.
+The only way to access the file once it's been uploaded is by the password. Passwords are stored safely on our storage servers using bcrypt & salts.  
+
+If you have any security concerns please <a href="contact.php"><b>Contact</b></a> us and we'll tell you more!
+
 ### What do you know about me and my file?
 We try to know as little as possible. We basically don't want to know who you are or what you're uploading.
 When you upload something to UpLoadMe no data about you is stored. We can't even see what IP you're using.
-
 
 ### I want to delete my own file.
 When you uploaded your file you were given a removal-code. On the top of this page you can find a link to the removal page. Enter your removal-code on that page to remove your file.  
@@ -13,5 +19,5 @@ If you've lost your removal-code there's no way of removing your file. (That's w
 
 ### I want to delete someone else's file since it violates some law.
 Cool, you know laws. Good for you!  
-Yes, we will cooperate with law enforcement if they file a valid warrant or DMCA.  
+Yes, we will cooperate with law enforcement if they file a warrant that's valid under Swedish law (Since the site is hosted in Sweden).
 Keep in mind though that we know nothing about you, so there's not really anything they can gain from it.
