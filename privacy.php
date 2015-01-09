@@ -7,7 +7,7 @@
                 include './res/navbar.php';
                 getNavBar("privacy")
                 ?>
-                <div id="container" style="margin-top: 200px">
+                <div id="container" style="margin-top: 200px;margin-bottom: 100px">
                     <div id="title"><center><h2>Privacy</h2></center></div>
                     <div>
                         <?php
