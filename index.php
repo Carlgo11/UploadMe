@@ -20,6 +20,7 @@ include './res/head-mainpage.php';
                         <center>
                             <input class="btn btn-success" style="width: 500px; height: 100px"  data-filename-placement="inside" id="file" name="file" type="file" /><br>
                             <br>
+                            <input class="form-control" type="password" autofocus="" placeholder="(Optional)" id="password" name="password" value="">
                             <input type="submit" name="submit" value="Upload" id="submit" class="btn btn-lg btn-default" disabled>
                         </center>
                     </form>
