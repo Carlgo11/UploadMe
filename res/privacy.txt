@@ -13,7 +13,7 @@ There is no way to only allow certain people to access it. However bots like (li
 ### What about files with passwords?
 Files with passwords are encrypted directly when uploaded. We can't see what the file contains without the password.  
 Password protected files are handled the same was as those without passwords when uploaded. We don't scan the files for viruses or illegal content like Google does.
-The only way to access the file once it's been uploaded is by the password. Passwords are stored safely on our storage servers using bcrypt & salts.  
+The only way to access the file once it's been uploaded is by the password. __Passwords are NOT stored by us!__
 
 If you have any security concerns please <a href="contact.php"><b>Contact</b></a> us and we'll tell you more!
 
@@ -28,4 +28,4 @@ If you've lost your removal-code there's no way of removing your file. (That's w
 ### I want to delete someone else's file since it violates some law.
 Cool, you know laws. Good for you!  
 Yes, we will cooperate with law enforcement if they file a takedown request that's valid under Swedish law (Since the site is hosted in Sweden).  
-Keep in mind though that we know nothing about you, so there's not really anything they can gain from it.
+Use the __<a href="">Contact</a>__ button to send us your takedown request.
