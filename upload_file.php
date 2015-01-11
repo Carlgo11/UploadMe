@@ -37,7 +37,6 @@ if ($_FILES["file"]["error"] > 0) {
         $salt = '!kQm*fF3pXe1Kbm%9';
         $content = encrypt($content, $_POST['password'], $salt);
         $password = $_POST['password'];
-        echo "boo hooo! (I've stoped doing propper debugging now...)<br>";
     }
 
     $name = getName(15) . "." . $extension;
@@ -50,7 +49,6 @@ if ($_FILES["file"]["error"] > 0) {
     $query->execute();
 
     if ($_POST['password'] != "") {
-        echo "m";
         $m = $con->prepare("UPDATE `" . $conf['mysql-table'] . "` SET `salt`=?, `encryption`=? WHERE `name`=?");
         $g = TRUE;
         $m->bind_param("sss", $salt, $g , $name);

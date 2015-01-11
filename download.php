@@ -37,7 +37,7 @@ if (isset($_GET['file']) && $_GET['file'] != null) {
                 header("Content-type: $type");
                 header("Content-Transfer-Encoding: binary");
                 header("Content-Description: File Transfer");
-                header("Location: index.php");
+                echo stripslashes($content);
             }
         } else {
             //Request password
