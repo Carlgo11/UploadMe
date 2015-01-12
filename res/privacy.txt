@@ -2,7 +2,7 @@
 What's the diffirence between one of the usual uploading services like Dropbox, Google Docs and UpLoadMe?  
 We've done everything to ensure we know nothing about you. In the text below you'll see more precisely what measures we've taken to know as little as possible about our users.  
 
-As you've might have noticed we've even thrown away the idea of usernames and other login methods.  
+As you might have noticed we have even thrown away the idea of usernames and other login methods.  
 All to ensure we have the best privacy a file storage solution can have!  
 <br>
 
@@ -18,12 +18,12 @@ The only way to access the file once it's been uploaded is by the password. __Pa
 If you have any security concerns please <a href="contact.php"><b>Contact</b></a> us and we'll tell you more!
 
 ### What do you know about me and my file?
-We try to know as little as possible. We basically don't want to know who you are or what you're uploading.
+We try to know as little as possible about what is being uploaded and who is being the uploader. We basically don't want to know who you are or what you're uploading.
 When you upload something to UpLoadMe no data about you is stored. We can't even see what IP you're using.
 
 ### I want to delete my own file.
 When you uploaded your file you were given a removal-code. On the top of this page you can find a link to the removal page. Enter your removal-code on that page to remove your file.  
-If you've lost your removal-code there's no way of removing your file. (That's why we told you to keep the code secure)
+If you have lost your removal-code there's no way of removing your file. (That's why we told you to keep the code secure)
 
 ### I want to delete someone else's file since it violates some law.
 Yes, we will cooperate with law enforcement if they file a takedown request that's valid under Swedish law (Since the site is hosted in Sweden).  
