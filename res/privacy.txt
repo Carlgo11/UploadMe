@@ -27,4 +27,4 @@ If you have lost your removal-code there's no way of removing your file. (That's
 
 ### I want to delete someone else's file since it violates some law.
 Yes, we will cooperate with law enforcement if they file a takedown request that's valid under Swedish law (Since the site is hosted in Sweden).  
-Use the __<a href="">Contact</a>__ button to send us your takedown request.
+Use the __<a href="contact.php">Contact</a>__ button to send us your takedown request.
