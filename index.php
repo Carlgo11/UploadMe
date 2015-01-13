@@ -7,7 +7,7 @@ include './res/head.php';
 include './res/navbar.php';
 getNavBar("home");
 ?>
-<div class="inner go">
+<div class="content">
     <h1>UpLoadMe, Uploading made simple</h1>
 
     <p class="lead">

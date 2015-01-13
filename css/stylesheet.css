@@ -9,15 +9,48 @@ a {
 }
 
 nav {
-    display: block;
     text-align: center;
-    margin-bottom: 30px;
 }
 
 .nav-right * {
     display: inline-block;
 }
 
+.nav-right a {
+    font-weight: bold;
+    color: #FFFFFF; /* IE8 proofing */
+    color: rgba(255, 255, 255, .75);
+    border-bottom: 2px solid transparent;
+    padding-bottom: 3px;
+}
+
+.nav-right a:hover,
+.nav-right a:focus {
+    text-decoration: none;
+    color: inherit;
+
+    -webkit-transition: border 300ms ease;
+    -o-transition: border 300ms ease;
+    transition: border 300ms ease;
+    border-bottom-color: #A9A9A9;
+}
+
+.active > a,
+.active > a:hover,
+.active > a:focus {
+    color: white;
+    border-bottom-color: white;
+}
+
 .nav-right > li + li {
     margin-left: 10px;
+}
+
+.content {
+    padding-top: 15px;
+}
+
+footer {
+    padding-top: 30px;
+    color: #999999;
 }
