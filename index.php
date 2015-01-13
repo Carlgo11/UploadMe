@@ -14,7 +14,7 @@ include './res/head-mainpage.php';
                     <h1>UpLoadMe, Uploading made simple</h1>
                     <p class="lead">
                         With UpLoadMe you can share your personal files<br>with friends without needing to give out your personal information<br>(IP Address, Name, Address, etc etc..)
-                        Simply Drop the file in the green area and click Upload
+                        <br>Simply Drop the file in the green area and click Upload
                     </p>
                     <form action="./upload_file.php" method="post" enctype="multipart/form-data">
                         <center>
