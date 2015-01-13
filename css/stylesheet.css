@@ -1,0 +1,23 @@
+body {
+    background-color: #333333;
+    color: white;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+nav {
+    display: block;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.nav-right * {
+    display: inline-block;
+}
+
+.nav-right > li + li {
+    margin-left: 10px;
+}
