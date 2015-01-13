@@ -18,11 +18,12 @@ getNavBar("home");
 
     <div class="upload-form">
         <form action="./upload_file.php" method="post" enctype="multipart/form-data">
-            <input class="btn btn-success" style="width: 500px; height: 100px"
-                   data-filename-placement="inside" id="file" name="file" type="file"/><br>
+            <input class="btn btn-success"
+                   data-filename-placement="inside" id="file" name="file" type="file"/>
+            <br>
             <input class="form-control" type="password" autofocus="" placeholder="Password (Optional)"
-                   id="password" name="password" value="" style="width: 400px;margin-bottom: 30px">
-            <input type="submit" name="submit" value="Upload" id="submit" class="btn btn-lg btn-default"
+                   id="password" name="password" value="">
+            <input type="submit" name="submit" value="Upload" id="submit" class="btn btn-lg btn-default upload"
                    disabled>
         </form>
     </div>
