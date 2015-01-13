@@ -1,6 +1,6 @@
 UploadMe
 ========
-[![irc](https://img.shields.io/badge/irc.esper.net-join%20%23uploadme-brightgreen.svg)](https://webchat.esper.net/?channels=uploadme)
+[![irc](https://img.shields.io/badge/EsperNet-join%20%23uploadme-brightgreen.svg)](https://webchat.esper.net/?channels=uploadme)
 
 ###Quickly upload files to your server
 
