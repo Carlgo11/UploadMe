@@ -1,6 +1,6 @@
 <?php
 if (isset($_GET['file']) && $_GET['file'] != null) {
-    include './res/head-mainpage.php';
+    include './res/head.php';
 } else {
     header("Location: ./");
 }

@@ -1,5 +1,5 @@
 <?php
-include './res/head-mainpage.php';
+include './res/head.php';
 ?>
 <body>
     <div class="site-wrapper">

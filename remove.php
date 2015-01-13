@@ -1,5 +1,5 @@
 <?php
-include './res/head-mainpage.php';
+include './res/head.php';
 if (isset($_POST['postbut'])) {
     include 'config.php';
     $con = mysqli_connect($conf['mysql-url'], $conf['mysql-user'], $conf['mysql-password'], $conf['mysql-db']) or header('Location: ./mysql-error.php');

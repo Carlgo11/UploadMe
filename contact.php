@@ -1,5 +1,5 @@
 <?php
-include './res/head-mainpage.php';
+include './res/head.php';
 include './config.php';
 ?>
 <body>
