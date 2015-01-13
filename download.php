@@ -1,6 +1,7 @@
 <?php
 
-function decrypt($encrypted, $password, $salt = '!kQm*fF3pXe1Kbm%9') {
+function decrypt($encrypted, $password, $salt = '!kQm*fF3pXe1Kbm%9')
+{
     $key = hash('SHA256', $salt . $password, true);
     $iv = base64_decode(substr($encrypted, 0, 22) . '==');
     $encrypted = substr($encrypted, 22);
@@ -21,7 +22,7 @@ if (isset($_GET['file']) && $_GET['file'] != null) {
     $query->execute();
     $query->bind_result($name, $type, $size, $content, $encryption, $salt);
     if ($row = $query->fetch()) {
-        
+
     }
     if ($encryption != NULL) {
         if (isset($_POST['password'])) {

@@ -1,6 +1,7 @@
 <?php
 
-function getName($n) {
+function getName($n)
+{
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $randomString = '';
     for ($i = 0; $i < $n; $i++) {
@@ -9,7 +10,8 @@ function getName($n) {
     return $randomString;
 }
 
-function encrypt($decrypted, $password, $salt = '!kQm*fF3pXe1Kbm%9') {
+function encrypt($decrypted, $password, $salt = '!kQm*fF3pXe1Kbm%9')
+{
     $key = hash('SHA256', $salt . $password, true);
     srand();
     $iv = mcrypt_create_iv(mcrypt_get_iv_size(MCRYPT_RIJNDAEL_128, MCRYPT_MODE_CBC), MCRYPT_RAND);
@@ -51,7 +53,7 @@ if ($_FILES["file"]["error"] > 0) {
     if ($_POST['password'] != "") {
         $m = $con->prepare("UPDATE `" . $conf['mysql-table'] . "` SET `salt`=?, `encryption`=? WHERE `name`=?");
         $g = TRUE;
-        $m->bind_param("sss", $salt, $g , $name);
+        $m->bind_param("sss", $salt, $g, $name);
         $m->execute();
     }
 
