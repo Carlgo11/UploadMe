@@ -12,7 +12,7 @@ include './config.php';
                 ?>
                 <div class="inner go">
                     <h2>Contact</h2>
-                    <?php
+                    <center><?php
                     session_start();
 
                     if (!class_exists('KeyCAPTCHA_CLASS')) {
@@ -46,7 +46,7 @@ include './config.php';
                         <input type="hidden" name="capcode" id="capcode" value="false" />
                         <input type="submit" value="Send" id="postbut" class="btn btn-success btn-lg" /></form>';
                     }
-                    ?>
+                    ?></center>
                 </div>
                 <?php include './res/footer.php'; ?>
             </div>
