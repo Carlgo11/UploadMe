@@ -1,7 +1,5 @@
 <?php
 
-include 'lib/encryption';
-
 if (isset($_GET['file']) && $_GET['file'] != null) {
     $file = $_GET['file'];
     include './config.php';
@@ -15,6 +13,7 @@ if (isset($_GET['file']) && $_GET['file'] != null) {
     }
     if ($encryption != NULL) {
         if (isset($_POST['password'])) {
+            include 'lib/Encryption.php';
             $content = Encryption::decrypt($content, $_POST['password'], $salt);
             if (!$content) {
                 $error = 0;
