@@ -3,11 +3,6 @@ html, body {
     width: 100%;
 }
 
-html {
-    -webkit-box-shadow: inset 0 0 100px rgba(0, 0, 0, .5);
-    box-shadow: inset 0 0 100px rgba(0, 0, 0, .5);
-}
-
 body {
     background-color: #333333;
     color: white;
@@ -72,18 +67,28 @@ nav {
     padding-bottom: 10px;
 }
 
-.upload-form {
+.center-form {
     max-width: 300px;
     margin-left: auto;
     margin-right: auto;
 }
 
-.upload-form .upload {
+.center-form .upload {
     width: 100%;
 }
 
-.upload-form .submit {
+.center-form .submit {
     margin-top: 20px;
+}
+
+.contact {
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact * {
+    margin-bottom: 20px;
 }
 
 footer {
@@ -125,5 +130,11 @@ footer {
 
     .upload-form {
         max-width: 35%;
+    }
+
+    .privacy {
+        padding-top: 50px;
+        padding-left: 150px;
+        padding-right: 150px;
     }
 }

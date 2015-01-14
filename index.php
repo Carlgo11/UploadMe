@@ -16,11 +16,11 @@ getNavBar("home");
         <br>Simply Drop the file in the green area and click Upload
     </p>
 
-    <div class="upload-form">
+    <div class="center-form">
         <form action="./upload_file.php" method="post" enctype="multipart/form-data">
             <input class="btn btn-success upload" data-filename-placement="inside" id="file" name="file" type="file"/>
             <br>
-            <input class="form-control password" type="password" autofocus="" placeholder="Password (Optional)"
+            <input class="form-control" type="password" autofocus="" placeholder="Password (Optional)"
                    id="password" name="password" value="">
             <input type="submit" name="submit" value="Upload" id="submit" class="btn btn-lg btn-default submit"
                    disabled>
