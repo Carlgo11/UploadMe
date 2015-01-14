@@ -4,8 +4,8 @@ function getNavBar($page = null)
 {
 ?>
 <nav>
-    <a href="./">
-        <h3 class="brand">UpLoadMe<img height="32" width="32" src="/res/media/logo.png"></h3>
+    <a class="brand" href="./">
+        <h3>UpLoadMe<img height="32" width="32" src="/res/media/logo.png"></h3>
     </a>
     <ul class="nav-right">
         <?php

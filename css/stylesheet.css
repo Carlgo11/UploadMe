@@ -14,7 +14,9 @@ body {
     text-shadow: 0 1px 3px rgba(0, 0, 0, .5);
 }
 
-a, a:hover {
+a,
+a:hover,
+a:focus {
     color: white;
     text-decoration: none;
 }
@@ -24,6 +26,7 @@ h1 {
 }
 
 nav {
+    height: 100px;
     text-align: center;
 }
 
@@ -47,7 +50,7 @@ nav {
     -webkit-transition: border 300ms ease;
     -o-transition: border 300ms ease;
     transition: border 300ms ease;
-    border-bottom-color: #A9A9A9;
+    border-bottom-color: white;
 }
 
 .active > a,
@@ -76,36 +79,51 @@ nav {
 }
 
 .upload-form .upload {
+    width: 100%;
+}
+
+.upload-form .submit {
     margin-top: 20px;
 }
 
 footer {
-    padding-top: 30px;
+    padding: 30px 5px 5px 5px;
     color: #999999;
 }
 
-@media(min-width: 600px) {
+@media (min-width: 600px) {
+    h1 {
+        font-size: 36px;
+    }
+
     nav {
         padding-top: 20px;
     }
 
-    nav * {
+    nav ul {
         display: inline-block;
     }
-
+    
     nav .brand {
         float: left;
+        padding-left: 100px;
     }
-
+    
     nav .nav-right {
         float: right;
+        padding-right: 100px;
+        margin-top: 20px;
+    }
+
+    .nav-right > li + li {
+        margin-left: 20px;
+    }
+
+    .content {
+        padding-top: 125px;
     }
 
     .upload-form {
-        max-width: 90%;
-    }
-
-    footer {
-        padding-top: 20%;
+        max-width: 35%;
     }
 }
