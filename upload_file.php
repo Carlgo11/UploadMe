@@ -12,6 +12,7 @@ function getName($n) {
 include './config.php';
 $temp = explode(".", $_FILES["file"]["name"]);
 $extension = end($temp);
+$filename = $_FILES['file']['name'];
 
 if ($_FILES["file"]["error"] > 0) {
     echo "Return Code: " . $_FILES["file"]["error"] . "<br>";
@@ -28,15 +29,17 @@ if ($_FILES["file"]["error"] > 0) {
         $salt = getName(32);
         $content = Encryption::encrypt($content, $_POST['password'], $salt);
         $password = $_POST['password'];
+        $filename = Encryption::encrypt($filename, $_POST['password'], $salt);
     }
 
     $name = getName(15) . "." . $extension;
     $rmcode = getName(32);
 
+
     $con = mysqli_connect($conf['mysql-url'], $conf['mysql-user'], $conf['mysql-password'], $conf['mysql-db']) or header('Location: ./mysql-error.php');
-    $q = "INSERT INTO `" . $conf['mysql-table'] . "` (`name`, `size`, `type`, `content`, `removalcode`) VALUES (?, ?, ?, ?, ?);";
+    $q = "INSERT INTO `" . $conf['mysql-table'] . "` (`name`, `size`, `type`, `content`, `file-name`, `removalcode`) VALUES (?, ?, ?, ?, ?, ?);";
     $query = $con->prepare($q);
-    $query->bind_param("sssss", $name, $_FILES['file']['size'], $_FILES['file']['type'], $content, $rmcode);
+    $query->bind_param("ssssss", $name, $_FILES['file']['size'], $_FILES['file']['type'], $content, $filename, $rmcode);
     $query->execute();
 
     if ($_POST['password'] != "") {

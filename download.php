@@ -4,10 +4,10 @@ if (isset($_GET['file']) && $_GET['file'] != null) {
     $file = $_GET['file'];
     include './config.php';
     $con = mysqli_connect($conf['mysql-url'], $conf['mysql-user'], $conf['mysql-password'], $conf['mysql-db']) or header('Location: ./mysql-error.php');
-    $query = $con->prepare("SELECT name, type, size, content, encryption, salt FROM `" . $conf['mysql-table'] . "` WHERE `name` = ?");
+    $query = $con->prepare("SELECT name, type, size, content, `file-name`, encryption, salt FROM `" . $conf['mysql-table'] . "` WHERE `name` = ?");
     $query->bind_param("s", $_GET['file']);
     $query->execute();
-    $query->bind_result($name, $type, $size, $content, $encryption, $salt);
+    $query->bind_result($name, $type, $size, $content, $filename, $encryption, $salt);
     if ($row = $query->fetch()) {
         
     }
@@ -20,9 +20,14 @@ if (isset($_GET['file']) && $_GET['file'] != null) {
                 //Request password
                 include './res/request-password.php';
             } else {
+                if ($filename == NULL) {
+                    $filename = $name;
+                } else {
+                    $filename = Encryption::decrypt($filename, $_POST['password'], $salt);
+                }
                 header("Accept-Ranges: bytes");
                 header("Keep-Alive: timeout=15, max=100");
-                header("Content-Disposition: attachment; filename=$name");
+                header("Content-Disposition: attachment; filename=$filename");
                 header("Content-type: $type");
                 header("Content-Transfer-Encoding: binary");
                 header("Content-Description: File Transfer");
@@ -33,9 +38,12 @@ if (isset($_GET['file']) && $_GET['file'] != null) {
             include './res/request-password.php';
         }
     } else {
+        if ($filename == NULL) {
+            $filename = $name;
+        }
         header("Accept-Ranges: bytes");
         header("Keep-Alive: timeout=15, max=100");
-        header("Content-Disposition: attachment; filename=$name");
+        header("Content-Disposition: attachment; filename=$filename");
         header("Content-type: $type");
         header("Content-Transfer-Encoding: binary");
         header("Content-Description: File Transfer");
