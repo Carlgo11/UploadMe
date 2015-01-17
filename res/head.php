@@ -8,14 +8,14 @@
     <meta name="author" content="carlgo11">
     <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
     <META HTTP-EQUIV="Expires" CONTENT="-1">
-    <link rel="shortcut icon" type="image/icon" href="/res/media/logo.png"/>
+    <link rel="shortcut icon" type="image/icon" href="./res/media/logo.png"/>
     <title>
         <?php
         include './config.php';
         echo $conf['title'];
         ?>
     </title>
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/stylesheet.css" rel="stylesheet">
-    <script src="/js/bootstrap.file-input.js"></script>
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/stylesheet.css" rel="stylesheet">
+    <script src="./js/bootstrap.file-input.js"></script>
 </head>
