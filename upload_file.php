@@ -1,12 +1,16 @@
 <?php
-
-function getName($n) {
+include './lib/Mysql.php';
+function getName($n, $row) {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $randomString = '';
     for ($i = 0; $i < $n; $i++) {
         $randomString .= $characters[rand(0, strlen($characters) - 1)];
     }
+    if(Mysql::alreadyExists($row, $randomString)){
+        getName($n, $row);
+    }else{
     return $randomString;
+    }
 }
 
 include './config.php';
@@ -32,8 +36,8 @@ if ($_FILES["file"]["error"] > 0) {
         $filename = Encryption::encrypt($filename, $_POST['password'], $salt);
     }
 
-    $name = getName(15) . "." . $extension;
-    $rmcode = getName(32);
+    $name = getName(15, "name") . "." . $extension;
+    $rmcode = getName(32, "removalcode");
 
 
     $con = mysqli_connect($conf['mysql-url'], $conf['mysql-user'], $conf['mysql-password'], $conf['mysql-db']) or header('Location: ./mysql-error.php');
