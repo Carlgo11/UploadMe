@@ -2,12 +2,12 @@
 
 function getNavBar($page = null)
 {
-?>
-<nav>
-    <a class="brand" href="./">
-        <h3>UpLoadMe<img height="32" width="32" src="./res/media/logo.png"></h3>
-    </a>
-    <ul class="nav-right">
+    ?>
+    <nav>
+        <a class="brand" href="./">
+            <img height="60" width="170" src="./res/media/uploadme.png">
+        </a>
+        <ul class="nav-right">
         <?php
         if ($page == "home") {
             echo '<li class="active"><a href="">Home</a></li>';
@@ -32,8 +32,7 @@ function getNavBar($page = null)
         } else {
             echo '<li><a href="./privacy.php">Privacy</a></li>';
         }
-        echo '</ul></div></div>';
+        echo '</ul></nav>';
         }
-        ?>
-    </ul>
-</nav>
+
+?>
