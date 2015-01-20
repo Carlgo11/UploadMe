@@ -8,7 +8,7 @@ All to ensure we have the best privacy a file storage solution can have!
 
 ### How is the data you upload distributed?
 When you upload something to UpLoadMe you agree on sharing your file with everyone.  
-There is no way to only allow certain people to access it. However bots like (<a href="https://support.google.com/webmasters/answer/182072">Google</a>) can't find your file.  
+There is no way to only allow certain people to access it. However bots (like <a href="https://support.google.com/webmasters/answer/182072">Google</a>) can't find your file.  
 
 ### What about files with passwords?
 Files with passwords are encrypted directly when your upload them. We can't see what the file contains without the password.  
