@@ -16,7 +16,7 @@ getNavBar();
     <p class="lead">Use this link to download your file:</p>
     <?php
     $url = "https://uploadme.carlgo11.com/download.php?file=" . $_GET["file"];
-    echo '<pre><a href="' . $url . '" style="color:black">' . $url . '</a></pre>';
+    echo '<pre style="width: 500px"><a href="' . $url . '" style="color:black">' . $url . '</a></pre>';
     ?>
     <p class="lead">Your removal code is:</p>
     <center>

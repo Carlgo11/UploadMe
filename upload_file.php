@@ -30,7 +30,7 @@ if ($_FILES["file"]["error"] > 0) {
     $password = NULL;
     if ($_POST['password'] != "") {
         include 'lib/Encryption.php';
-        $salt = getName(32);
+        $salt = Encryption::generateSalt();
         $content = Encryption::encrypt($content, $_POST['password'], $salt);
         $password = $_POST['password'];
         $filename = Encryption::encrypt($filename, $_POST['password'], $salt);
