@@ -1,7 +1,5 @@
-UploadMe
+UploadMe   [![irc](https://img.shields.io/badge/EsperNet-join%20%23uploadme-brightgreen.svg)](https://webchat.esper.net/?channels=uploadme)
 ========
-[![irc](https://img.shields.io/badge/EsperNet-join%20%23uploadme-brightgreen.svg)](https://webchat.esper.net/?channels=uploadme)
-
 ###Quickly upload files to your server
 
 UploadMe is a file uploading system with privacy in mind.  
