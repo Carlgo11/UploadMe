@@ -1,6 +1,12 @@
 <?php
+<<<<<<< HEAD
 include './lib/Mysql.php';
 function getName($n, $row) {
+=======
+
+function getName($n)
+{
+>>>>>>> origin/css-changes
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $randomString = '';
     for ($i = 0; $i < $n; $i++) {
@@ -10,7 +16,21 @@ function getName($n, $row) {
         getName($n, $row);
     }else{
     return $randomString;
+<<<<<<< HEAD
     }
+=======
+}
+
+function encrypt($decrypted, $password, $salt = '!kQm*fF3pXe1Kbm%9')
+{
+    $key = hash('SHA256', $salt . $password, true);
+    srand();
+    $iv = mcrypt_create_iv(mcrypt_get_iv_size(MCRYPT_RIJNDAEL_128, MCRYPT_MODE_CBC), MCRYPT_RAND);
+    if (strlen($iv_base64 = rtrim(base64_encode($iv), '=')) != 22)
+        return false;
+    $encrypted = base64_encode(mcrypt_encrypt(MCRYPT_RIJNDAEL_128, $key, $decrypted . md5($decrypted), MCRYPT_MODE_CBC, $iv));
+    return $iv_base64 . $encrypted;
+>>>>>>> origin/css-changes
 }
 
 include './config.php';
