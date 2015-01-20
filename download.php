@@ -1,21 +1,5 @@
 <?php
 
-<<<<<<< HEAD
-=======
-function decrypt($encrypted, $password, $salt = '!kQm*fF3pXe1Kbm%9')
-{
-    $key = hash('SHA256', $salt . $password, true);
-    $iv = base64_decode(substr($encrypted, 0, 22) . '==');
-    $encrypted = substr($encrypted, 22);
-    $decrypted = rtrim(mcrypt_decrypt(MCRYPT_RIJNDAEL_128, $key, base64_decode($encrypted), MCRYPT_MODE_CBC, $iv), "\0\4");
-    $hash = substr($decrypted, -32);
-    $decrypted = substr($decrypted, 0, -32);
-    if (md5($decrypted) != $hash)
-        return false;
-    return $decrypted;
-}
-
->>>>>>> origin/css-changes
 if (isset($_GET['file']) && $_GET['file'] != null) {
     $file = $_GET['file'];
     include './config.php';
