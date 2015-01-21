@@ -41,6 +41,9 @@ if (isset($_GET['file']) && $_GET['file'] != null) {
         if ($filename == NULL) {
             $filename = $name;
         }
+        if($name == NULL && $content == NULL){
+            header("Location: index.php");
+        }else{
         header("Accept-Ranges: bytes");
         header("Keep-Alive: timeout=15, max=100");
         header("Content-Disposition: attachment; filename=$filename");
@@ -48,6 +51,7 @@ if (isset($_GET['file']) && $_GET['file'] != null) {
         header("Content-Transfer-Encoding: binary");
         header("Content-Description: File Transfer");
         echo stripslashes($content);
+        }
     }
 } else {
     header("Location: index.php");
