@@ -10,23 +10,21 @@ if (isset($_GET['file']) && $_GET['file'] != null) {
 include './res/navbar.php';
 getNavBar();
 ?>
-<div class="content">
+<div class="content done">
     <h1>Success!</h1><br>
 
     <p class="lead">Use this link to download your file:</p>
     <?php
     $url = "https://uploadme.carlgo11.com/download.php?file=" . $_GET["file"];
-    echo '<pre style="width: 500px"><a href="' . $url . '" style="color:black">' . $url . '</a></pre>';
+    echo '<pre><a href="' . $url . '">' . $url . '</a></pre>';
     ?>
     <p class="lead">Your removal code is:</p>
-    <center>
-        <?php
-        session_start();
-        echo '<pre style="width: 450px">' . $_SESSION["rmcode"] . '</pre>';
-        ?>
-        <p>Keep this code secret and in a good place.<br>You'll need it if you ever want to remove the file
-            from the system.</p>
-    </center>
+    <?php
+    session_start();
+    echo '<pre style="width: 450px">' . $_SESSION["rmcode"] . '</pre>';
+    ?>
+    <p>Keep this code secret and in a good place.<br>You'll need it if you ever want to remove the file
+        from the system.</p>
 </div>
 <?php include './res/footer.php'; ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

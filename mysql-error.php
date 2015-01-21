@@ -4,7 +4,7 @@ include './res/head.php';
 <body>
 <nav>
     <a class="brand" href="./">
-        <h3>UpLoadMe<img height="32" width="32" src="/res/media/logo.png"></h3>
+        <img height="60" width="170" src="./res/media/uploadme.png">
     </a>
 </nav>
 <div class="mysql-content">
