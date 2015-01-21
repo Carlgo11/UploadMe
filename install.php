@@ -1,11 +1,5 @@
 <?php
 
-function replaceConfigValue($name, $value) {
-	
-	
-	
-}
-
 if (file_exists('config.php')) {
     header("Location: ./");
 } else {
