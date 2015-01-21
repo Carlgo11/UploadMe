@@ -111,6 +111,10 @@ h1.home {
     margin-bottom: 20px;
 }
 
+.content .done {
+    text-align: center;
+}
+
 .mysql-content {
     width: 500px;
     margin-left: auto;
