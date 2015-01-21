@@ -1,9 +1,9 @@
 <?php
 
 function replaceConfigValue($name, $value) {
-	$data=file_get_contents("./config.php");
-	$data=preg_replace('#\$conf\[\''.$name.'\'\] ?= ?([^;]*);#', '$conf[\''.$name.'\'] = '.var_export($value, true).';' ,$data);
-	file_put_contents("./config.php", $data);
+	
+	
+	
 }
 
 if (file_exists('config.php')) {
@@ -12,8 +12,35 @@ if (file_exists('config.php')) {
 
     if (isset($_POST['submit'])) {
         rename("./config.example.php", "./config.php");
+
+		// Modify Config file
+		$data=file_get_contents("./config.php");
+		$fields=array("mysql-url", "mysql-user", "mysql-password", "mysql-db", "mysql-table");
+		foreach($fields as $field) {
+			$data=preg_replace('#\$conf\[\''.$field.'\'\] ?= ?([^;]*);#', '$conf[\''.$field.'\'] = '.var_export($_POST[$field], true).';' ,$data);
+		}
+		file_put_contents("./config.php", $data);
+
+		// Include the new File
+		// TODO: What if config does not work?
         include 'config.php';
-        /* TODO: change config.php's values. */
+
+		// Init Database
+		$query='CREATE TABLE IF NOT EXISTS `'.$conf['mysql-table'].'` (
+			`id` int(11) NOT NULL AUTO_INCREMENT,
+			`name` varchar(30) NOT NULL,
+			`type` varchar(30) NOT NULL,
+			`size` int(11) NOT NULL,
+			`content` mediumblob NOT NULL,
+			`file-name` text,
+			`removalcode` text,
+			`encryption` text,
+			`salt` text,
+			PRIMARY KEY (`id`)
+			) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1';
+
+		$con = mysqli_connect($conf['mysql-url'], $conf['mysql-user'], $conf['mysql-password'], $conf['mysql-db']) or header('Location: ./mysql-error.php');
+		$query = $con->query($query);
     } else {
         ?>
         <!DOCTYPE html>
