@@ -39,7 +39,7 @@ if ($_FILES["file"]["error"] > 0) {
     $name = getName(15, "name") . "." . $extension;
     $rmcode = getName(32, "removalcode");
 
-
+    
     $con = mysqli_connect($conf['mysql-url'], $conf['mysql-user'], $conf['mysql-password'], $conf['mysql-db']) or header('Location: ./mysql-error.php');
     $q = "INSERT INTO `" . $conf['mysql-table'] . "` (`name`, `size`, `type`, `content`, `file-name`, `removalcode`) VALUES (?, ?, ?, ?, ?, ?);";
     $query = $con->prepare($q);
