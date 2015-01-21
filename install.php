@@ -1,4 +1,11 @@
 <?php
+
+function replaceConfigValue($name, $value) {
+	$data=file_get_contents("./config.php");
+	$data=preg_replace('#\$conf\[\''.$name.'\'\] ?= ?([^;]*);#', '$conf[\''.$name.'\'] = '.var_export($value, true).';' ,$data);
+	file_put_contents("./config.php", $data);
+}
+
 if (file_exists('config.php')) {
     header("Location: ./");
 } else {
