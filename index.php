@@ -30,21 +30,21 @@ include './res/head.php';
 
         <div class="row">
             <div class="col-md-4">
-                <span class="glyphicon glyphicon-folder-open"></span>
+                <span class="glyphicon glyphicon-folder-open " style="color:#5cb85c;border-color:#4cae4c"></span>
 
                 <h3>Simple</h3>
 
                 <p>Simply drop a file in the green area and click Upload</p>
             </div>
             <div class="col-md-4">
-                <span class="glyphicon glyphicon-eye-close"></span>
+                <span class="glyphicon glyphicon-eye-close" style="color:#5cb85c;border-color:#4cae4c"></span>
 
                 <h3>Private</h3>
 
                 <p>We don't store any information about you. No names, IP addresses or logs!</p>
             </div>
             <div class="col-md-4">
-                <span class="glyphicon glyphicon-lock"></span>
+                <span class="glyphicon glyphicon-lock" style="color:#5cb85c;border-color:#4cae4c"></span>
 
                 <h3>Secure</h3>
 
