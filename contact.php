@@ -58,7 +58,7 @@ if (isset($_POST['post'])) {
                     <script type="text/javascript"
                             src="https://www.google.com/recaptcha/api.js?hl=<?php echo $lang; ?>">
                     </script>
-                    <button name="post" id="post" type="submit" style="margin-top:30px" class="btn btn-success"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> Send</button></form></div><?php } else {
+                    <button name="post" id="post" type="submit" class="btn btn-lg btn-success">Send</button></form></div><?php } else {
                 ?>
             <center><div class="alert alert-success" role="alert" style="height: 100px;width: 500px">Email sent!<br><br>Thank you for your email. A reply will be sent to: <?php echo $email; ?></div></center>
                 <?php
