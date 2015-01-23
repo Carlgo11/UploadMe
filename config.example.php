@@ -20,3 +20,9 @@ $conf['mysql-table'] = "uploads";
 
 # Contact email. (Used in contact.php)
 $conf['email-reciver'] = "admin@example.com";
+
+# ReCaptcha site key
+$conf['recaptcha-key'] = "";
+
+# ReCaptcha site secret key
+$conf['recaptcha-secret'] = "";
