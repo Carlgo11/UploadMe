@@ -1,49 +1,69 @@
 <?php
 include './res/head.php';
-include './config.php';
-?>
-<body>
-<?php
-include './res/navbar.php';
-getNavBar("contact")
-?>
-<div class="content">
-    <h2>Contact</h2>
-    <?php
-    session_start();
 
-    if (!class_exists('KeyCAPTCHA_CLASS')) {
-        include('./res/keycaptcha.php');
-    }
-    $kc_o = new KeyCAPTCHA_CLASS();
-    if (isset($_POST['capcode'])) {
-        if ($kc_o->check_result($_POST['capcode'])) {
-            $sent = true;
-            $email = $_POST['email'];
-            $message = $_POST['message'];
-            $to = $conf['email-reciver'];
-            $subject = "New mail from " . $email;
-            $message = "Hello,\nYou've recived a new message from: " . $email . "\n\nMessage:\n" . $message;
-            $headers = 'From: ' . $_POST['email'] . "\r\n" .
+include './res/navbar.php';
+getNavBar("contact");
+
+include './config.php';
+
+require_once "./lib/ReCAPTCHA.php";
+// Register API keys at https://www.google.com/recaptcha/admin
+$siteKey = $conf['recaptcha-key'];
+$secret = $conf['recaptcha-secret'];
+// reCAPTCHA supported 40+ languages listed here: https://developers.google.com/recaptcha/docs/language
+$lang = "en";
+// The response from reCAPTCHA
+$resp = null;
+// The error code from reCAPTCHA, if any
+$error = null;
+$reCaptcha = new ReCaptcha($secret);
+
+// Was there a reCAPTCHA response?
+if (isset($_POST["g-recaptcha-response"]) && $_POST["g-recaptcha-response"]) {
+    $resp = $reCaptcha->verifyResponse(
+            $_SERVER["REMOTE_ADDR"], $_POST["g-recaptcha-response"]
+    );
+}
+$output = null;
+if (isset($_POST['post'])) {
+    if ($resp != null && $resp->success) {
+        $sent = true;
+        $email = $_POST['email'];
+        $message = $_POST['message'];
+        $to = $conf['email-reciver'];
+        $subject = "New mail from " . $email;
+        $message = "Hello,\nYou've recived a new message from: " . $email . "\n\nMessage:\n" . $message;
+        $headers = 'From: ' . $_POST['email'] . "\r\n" .
                 'Reply-To: ' . $_POST["email"] . '' . "\r\n" .
                 'X-Mailer: PHP/' . phpversion();
-            mail($to, $subject, $message);
-            echo '<div class="alert alert-success" role="alert" style="height: 100px">Email sent!<br><br>Thank you for your email. A reply will be sent to:' . $email . '.</div>';
-        }
+        // mail($to, $subject, $message);
+    } else {
+        $error = 1;
     }
-    if (!isset($sent) || !$sent) {
-        if (!class_exists('KeyCAPTCHA_CLASS')) {
-            include('./res/keycaptcha.php');
-        }
-        $kc_o = new KeyCAPTCHA_CLASS();
-        echo '<p>Fill in a message to us below and we\'ll get back to you as soon as possible.</p><div class="contact"><form method="POST" action="">';
-        echo $kc_o->render_js();
-        echo '<input type="email" id="email" name="email" placeholder="Your email" required="" class="form-control"/>
-                <textarea rows="4" id="message" name="message" cols="50" required="" placeholder="Message"></textarea>
-                <input type="hidden" name="capcode" id="capcode" value="false" />
-                <input type="submit" value="Send" id="postbut" class="btn btn-success btn-lg" /></form></div>';
-    }
-    ?>
-</div>
-<?php include './res/footer.php'; ?>
+}
+?>
+<head><script src='https://www.google.com/recaptcha/api.js'></script></head>
+<body>
+    <div class="content">
+        <h2>Contact</h2>
+        <?php
+        if (!isset($sent) || !$sent) {
+            ?><p>Fill in a message to us below and we\'ll get back to you as soon as possible.</p><div class="contact"><form method="POST" action="">
+            <?php if ($error != NULL) { ?>
+                        <div class="alert alert-danger"><h4>You need to click the ReCaptcha!</h4><p>Don't forget to click the "I'm not a robot" button.</p></div>
+                    <?php } ?>
+                    <input type="email" id="email" name="email" placeholder="Your email" required="" class="form-control"/>
+                    <textarea rows="4" id="message" name="message" cols="50" required="" placeholder="Message"></textarea>
+                    <div class="g-recaptcha" data-sitekey="<?php echo $siteKey; ?>"></div>
+                    <script type="text/javascript"
+                            src="https://www.google.com/recaptcha/api.js?hl=<?php echo $lang; ?>">
+                    </script>
+                    <button name="post" id="post" type="submit" style="margin-top:30px" class="btn btn-success"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> Send</button></form></div><?php } else {
+                ?>
+            <center><div class="alert alert-success" role="alert" style="height: 100px;width: 500px">Email sent!<br><br>Thank you for your email. A reply will be sent to: <?php echo $email; ?></div></center>
+                <?php
+            }
+            ?>
+    </div>
+    <?php include './res/footer.php'; ?>
 </body>
