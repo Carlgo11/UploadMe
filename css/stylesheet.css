@@ -135,6 +135,11 @@ h1.home {
     text-align: center;
 }
 
+pre {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .mysql-content {
     width: 500px;
     margin-left: auto;
