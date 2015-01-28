@@ -1,30 +1,32 @@
-##We value privacy!
-What's the diffirence between one of the usual uploading services like Dropbox, Google Docs and UpLoadMe?  
-We've done everything to ensure we know nothing about you. In the text below you'll see more precisely what measures we've taken to know as little as possible about our users.  
+## We value privacy!
+What's the difference between one of the usual uploading services like Dropbox or Google Docs, and UpLoadMe?
+We've done everything to ensure *we know nothing about you*. In the text below you'll see more precisely what measures we've taken to know as little as possible about our users.
 
-As you might have noticed we have even thrown away the idea of usernames and other login methods.  
-All to ensure we have the best privacy a file storage solution can have!  
+As you might have noticed, we have even thrown away the idea of user-names and other login methods;
+All to ensure you experience the best privacy a file storage solution can have!
 <br>
 
 ### How is the data you upload distributed?
-When you upload something to UpLoadMe you agree on sharing your file with everyone.  
-There is no way to only allow certain people to access it. However bots (like <a href="https://support.google.com/webmasters/answer/182072">Google</a>) can't find your file.  
+When you upload a file that isn't password protected to UpLoadMe, you agree on sharing that file with everyone.
+There is no way to only allow certain people to access it, however, bots (for example <a href="https://support.google.com/webmasters/answer/182072">Google's crawler service</a>) can't find your file.
 
 ### What about files with passwords?
-Files with passwords are encrypted directly when your upload them. We can't see what the file contains without the password.  
-Password protected files are handled the same was as those without passwords when uploaded. We don't scan the files for viruses or illegal content like Google does.
-The only way to access the file once it's been uploaded is by the password. __Passwords are NOT stored by us!__
+Files that have been protected with a password are encrypted with that password immediately when you upload them, which means that we don't have to store passwords.
+We can't see what the file contains without the password. Password protected files are handled in the same way as those without passwords when uploaded.
+We don't scan the files for viruses or illegal content like Google does.
+The only way to access the file once it's been uploaded is by entering the password to decrypt the file. __Passwords are NOT stored by us!__
 
 If you have any security concerns please <a href="contact.php"><b>Contact</b></a> us and we'll tell you more!
 
 ### What do you know about me and my file?
-We try to know as little as possible about what is being uploaded and who is being the uploader. We basically don't want to know who you are or what you're uploading.
-When you upload something to UpLoadMe no data about you is stored. We can't even see what IP you're using.
+We try to know as little as possible about what is being uploaded and who is the uploader. Essentially, we don't want to know who you are or what you're uploading.
+When you upload something to UpLoadMe, no data about you is stored. We can't even see what IP you're using.
+We don't keep identifiable logs of uploads or downloads.
 
 ### I want to delete my own file.
-When you uploaded your file you were given a removal-code. On the top of this page you can find a link to the removal page. Enter your removal-code on that page to remove your file.  
-If you have lost your removal-code there's no way of removing your file. (That's why we told you to keep the code secure)
+When you uploaded your file, you were given a removal code. On the top of this page, you can find a link to the removal page. Enter your removal code on that page to remove your file.
+If you have lost your removal code, there is no way of removing your file. (That's why we told you to keep the code secure)
 
 ### I want to delete someone else's file since it violates some law.
-Yes, we will cooperate with law enforcement if they file a takedown request that's valid under Swedish law (Since the site is hosted in Sweden).  
-Use the __<a href="contact.php">Contact</a>__ button to send us your takedown request.
+Yes, we will cooperate with law enforcement if they file a take-down request that's valid under Swedish law (Since the site is hosted in Sweden).
+Use the __<a href="contact.php">Contact</a>__ button to send us your take-down request.
