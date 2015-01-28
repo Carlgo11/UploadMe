@@ -54,9 +54,11 @@ nav {
 }
 
 .content {
+    //text-align: center;
+}
+.header {
     text-align: center;
 }
-
 .content h1 {
     padding-bottom: 10px;
 }
