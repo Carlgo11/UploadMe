@@ -25,10 +25,12 @@
         include './res/navbar.php';
         getNavBar("privacy")
         ?>
+<center>
         <div class="header">
             <h1>Privacy</h1>
         </div>
-        <div class="content privacy">
+</center>
+        <div class="privacy">
             <?php
             include './res/markdown.php';
             echo markdown("./res/", "privacy.txt");
