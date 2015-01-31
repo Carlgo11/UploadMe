@@ -25,7 +25,7 @@ class Encryption {
     }
 
     public static function generateSalt() {
-        $n = 32;
+        $n = 64;
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $randomString = '';
         for ($i = 0; $i < $n; $i++) {
