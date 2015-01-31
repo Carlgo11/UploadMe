@@ -1,14 +1,17 @@
 <?php
+
 include './lib/Mysql.php';
-function getName($n, $row) {
+
+function getName($min, $max, $row) {
+    $n = rand($min, $max);
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $randomString = '';
     for ($i = 0; $i < $n; $i++) {
         $randomString .= $characters[rand(0, strlen($characters) - 1)];
     }
-    if(Mysql::alreadyExists($row, $randomString)){
+    if (Mysql::alreadyExists($row, $randomString)) {
         getName($n, $row);
-    }else{
+    } else {
         return $randomString;
     }
 }
@@ -36,10 +39,10 @@ if ($_FILES["file"]["error"] > 0) {
         $filename = Encryption::encrypt($filename, $_POST['password'], $salt);
     }
 
-    $name = getName(15, "name") . "." . $extension;
-    $rmcode = getName(32, "removalcode");
+    $name = getName(10, 20, "name") . "." . $extension;
+    $rmcode = getName(32, 32, "removalcode");
 
-    
+
     $con = mysqli_connect($conf['mysql-url'], $conf['mysql-user'], $conf['mysql-password'], $conf['mysql-db']) or header('Location: ./mysql-error.php');
     $q = "INSERT INTO `" . $conf['mysql-table'] . "` (`name`, `size`, `type`, `content`, `file-name`, `removalcode`) VALUES (?, ?, ?, ?, ?, ?);";
     $query = $con->prepare($q);
