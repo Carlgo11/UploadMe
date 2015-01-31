@@ -123,11 +123,16 @@ h1.home {
     font-size: 35px;
 }
 
-.content.privacy {
-    padding: 30px 10px 0 10px;
+.privacy {
+    padding-left: 12%;
+    padding-right: 12%;
 }
 
-.content.privacy h3 {
+.privacy h2 {
+    padding-top: 30px;
+}
+
+.privacy h3 {
     padding-top: 20px;
 }
 
@@ -187,12 +192,6 @@ footer {
 
     .upload-form {
         max-width: 35%;
-    }
-
-    .content.privacy {
-        padding-top: 50px;
-        padding-left: 300px;
-        padding-right: 300px;
     }
 
     .header {
