@@ -40,7 +40,7 @@ if ($_FILES["file"]["error"] > 0) {
     }
 
     $name = getName(10, 20, "name") . "." . $extension;
-    $rmcode = getName(32, 32, "removalcode");
+    $rmcode = getName(32, 64, "removalcode");
 
 
     $con = mysqli_connect($conf['mysql-url'], $conf['mysql-user'], $conf['mysql-password'], $conf['mysql-db']) or header('Location: ./mysql-error.php');
