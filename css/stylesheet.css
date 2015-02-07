@@ -157,6 +157,10 @@ footer {
     text-align: center;
 }
 
+footer * {
+    display: inline-block;
+}
+
 @media (min-width: 600px) {
     h1 {
         font-size: 36px;
@@ -201,5 +205,10 @@ footer {
     .header h1 {
         padding-top: 80px;
         font-size: 50px;
+    }
+
+    footer span img {
+        height: 130px;
+        width: 130px;
     }
 }
