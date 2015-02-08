@@ -8,7 +8,7 @@ include './res/head.php';
     getNavBar("home");
     ?>
     <div class="content">
-        <div class="home-picture">
+        <div class="home-picture" style="background-image: url('./res/media/<?php echo rand(1, 8)?>.jpg');">
             <div class="center-form home-form">
                 <form action="./upload_file.php" method="post" enctype="multipart/form-data">
                     <input class="btn btn-success upload" data-filename-placement="inside" id="file" name="file"
