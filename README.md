@@ -3,7 +3,7 @@ UploadMe   [![irc](https://img.shields.io/badge/EsperNet-join%20%23uploadme-brig
 ###Quickly upload files to your server
 
 UploadMe is a file uploading system with privacy in mind.  
-The official site is <a href="https://uploadme.carlgo11.com/">uploadme.carlgo11.com</a> but the repo can also be self-hosted easily.
+The official site is <a href="https://uploadme.se/">uploadme.se</a> but the repo can also be self-hosted easily.
 
 
 
