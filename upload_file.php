@@ -42,11 +42,13 @@ if ($_FILES["file"]["error"] > 0) {
     $name = getName(10, 20, "name") . "." . $extension;
     $rmcode = getName(32, 64, "removalcode");
 
+    $options = array('cost' => 12);
+    $hashrmcode = password_hash($rmcode, PASSWORD_BCRYPT, $options);
 
     $con = mysqli_connect($conf['mysql-url'], $conf['mysql-user'], $conf['mysql-password'], $conf['mysql-db']) or header('Location: ./mysql-error.php');
     $q = "INSERT INTO `" . $conf['mysql-table'] . "` (`name`, `size`, `type`, `content`, `file-name`, `removalcode`) VALUES (?, ?, ?, ?, ?, ?);";
     $query = $con->prepare($q);
-    $query->bind_param("ssssss", $name, $_FILES['file']['size'], $_FILES['file']['type'], $content, $filename, $rmcode);
+    $query->bind_param("ssssss", $name, $_FILES['file']['size'], $_FILES['file']['type'], $content, $filename, $hashrmcode);
     $query->execute();
 
     if ($_POST['password'] != "") {

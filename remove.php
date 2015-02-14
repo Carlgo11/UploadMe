@@ -4,20 +4,24 @@ if (isset($_POST['postbut'])) {
     include 'config.php';
     $con = mysqli_connect($conf['mysql-url'], $conf['mysql-user'], $conf['mysql-password'], $conf['mysql-db']) or header('Location: ./mysql-error.php');
 
-    $s = "SELECT COUNT(*) AS num FROM `" . $conf['mysql-table'] . "` WHERE `removalcode` = ?";
+    $s = "SELECT COUNT(*) AS num FROM `" . $conf['mysql-table'] . "` WHERE `name` = ?";
     $query = $con->prepare($s);
-    $query->bind_param("s", $_POST['rmcode']);
+    $query->bind_param("s", $_POST['filename']);
     $query->execute();
     $result = $query->get_result();
-    while ($row = $result->fetch_array(MYSQLI_NUM)) {
-        foreach ($row as $r) {
-            if ($r == 1) {
-                $st = "DELETE FROM " . $conf['mysql-table'] . " WHERE `removalcode` = ?";
-                $q = $con->prepare($st);
-                $q->bind_param("s", $_POST['rmcode']);
-                $q->execute();
-                $output = "Removed 1 file. It's like it never existed!";
-            }
+
+    $gethash = $con->prepare("SELECT `removalcode` FROM `" . $conf['mysql-table'] . "` WHERE `name` = ?");
+    $gethash->bind_param("s", $_POST["filename"]);
+    $gethash->execute();
+    $gethash->bind_result($hash);
+    echo $hash;
+    if ($row2 = $gethash->fetch()) {
+        if (password_verify($_POST['rmcode'], $hash)) {
+            $con = mysqli_connect($conf['mysql-url'], $conf['mysql-user'], $conf['mysql-password'], $conf['mysql-db']) or header('Location: ./mysql-error.php');
+            $q1 = $con->prepare("DELETE FROM `" . $conf['mysql-table'] . "` WHERE `name` = ?");
+            $q1->bind_param("s", $_POST['filename']);
+            $q1->execute();
+            $output = "File removed. It's like it never existed!";
         }
     }
 }
@@ -28,13 +32,15 @@ if (isset($_POST['postbut'])) {
     getNavBar("remove");
     ?>
     <div class="content">
-        <?php if (isset($output) && $output != null) { ?>
-            <div class="alert alert-success"><?php echo $output ?></div>
-            <?php
-        } elseif (isset($_POST['postbut'])) {
-            ?>
-            <div class="alert alert-danger">Incorrect removal-code</div>
-        <?php } ?>
+        <center>
+            <?php if (isset($output) && $output != null) { ?>
+                <div class="alert alert-success" style="width: 500px"><?php echo $output ?></div>
+                <?php
+            } elseif (isset($_POST['postbut'])) {
+                ?>
+                <div class="alert alert-danger" style="width: 500px">Incorrect removal-code</div>
+            <?php } ?>
+        </center>
         <h1>Removing files</h1><br>
 
         <p class="lead">
@@ -47,6 +53,7 @@ if (isset($_POST['postbut'])) {
 
         <div class="center-form">
             <form method="POST" action="">
+                <input type="text" id="filename" name="filename" placeholder="File name" required="" autofocus="" class="form-control" style="margin-bottom: 20px" maxlength="30">
                 <input type="text" id="rmcode" name="rmcode" placeholder="Removal-code" required=""
                        maxlength="64" class="form-control"/>
                 <input type="submit" value="Delete" id="postbut" name="postbut" class="btn btn-danger btn-lg submit"/>
