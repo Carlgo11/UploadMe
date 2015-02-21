@@ -15,7 +15,7 @@ if (isset($_GET['file']) && $_GET['file'] != null) {
 
         <p class="lead">Use this link to download your file:</p>
         <?php
-        $url = "./download.php?file=" . $_GET["file"];
+        $url = $_SERVER['HTTP_HOST']."/download.php?file=" . $_GET["file"];
         echo '<pre style="width: 450px"><a href="' . $url . '">' . $url . '</a></pre>';
         ?>
         <p class="lead">Your removal code is:</p>
