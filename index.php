@@ -61,8 +61,8 @@ getNavBar("home");
 <?php include './res/footer.php'; ?>
 <script src="./js/docs.min.js"></script>
 <script src="./js/disable.js"></script>
-<script src="js/classie.js"></script>
-<script src="js/notificationFx.js"></script>
+<script src="./js/classie.js"></script>
+<script src="./js/notificationFx.js"></script>
 <script>
     (function () {
         var svgshape = document.getElementById('notification-shape'),
