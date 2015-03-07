@@ -54,7 +54,7 @@ if (file_exists('config.php')) {
             echo $conf['title'];
             ?>
         </title>
-        <link href="./css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
         <link href="./css/insallation.css" rel="stylesheet">
         <script src="./js/bootstrap.file-input.js"></script>
     </head>

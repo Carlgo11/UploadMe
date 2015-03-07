@@ -10,7 +10,7 @@ body {
 a,
 a:hover,
 a:focus {
-    color: #5c5c5c;
+    color: #4B4B4B;
     text-decoration: none;
 }
 
@@ -62,9 +62,9 @@ nav {
 }
 
 .home-picture {
-    background: no-repeat;
-    background-position: center;
+    background: no-repeat center;
     background-size: 100%;
+    margin-right: -16px;
 }
 
 .center-form {
@@ -98,6 +98,8 @@ h1.home {
 
 .glyphicon {
     font-size: 35px;
+    color:#5CB85C;
+    border-color:#4CAE4C;
 }
 
 .contact {
