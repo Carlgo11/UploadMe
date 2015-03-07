@@ -7,11 +7,13 @@ include './res/indexhead.php';
 include './res/navbar.php';
 getNavBar("home");
 ?>
+<?php if(window.top.location.href.toLowerCase().indexOf('http://ufcefwubqauib6of.onion/') != -1): ?>
 <div class="notification-shape shape-box" id="notification-shape" data-path-to="m 0,0 500,0 0,500 -500,0 z">
     <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 500 500" preserveAspectRatio="none">
         <path d="m 0,0 500,0 0,500 0,-500 z"/>
     </svg>
 </div>
+<?php endif; ?>
 <div class="content">
     <div class="home-picture" style="background-image: url('./res/media/<?php echo rand(1, 6) ?>.jpg');">
         <div class="center-form home-form">
@@ -61,6 +63,7 @@ getNavBar("home");
 <?php include './res/footer.php'; ?>
 <script src="./js/docs.min.js"></script>
 <script src="./js/disable.js"></script>
+<?php if(window.top.location.href.toLowerCase().indexOf('http://ufcefwubqauib6of.onion/') != -1): ?>
 <script src="./js/classie.js"></script>
 <script src="./js/notificationFx.js"></script>
 <script>
@@ -96,5 +99,6 @@ getNavBar("home");
         }, 2400);
     })();
 </script>
+<?php endif; ?>
 </body>
 </html>
