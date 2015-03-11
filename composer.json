@@ -1,0 +1,13 @@
+{
+    "name": "Carlgo11/UploadME",
+    "description": "File sharing site with privacy in mind. https://uploadme.se",
+    "license": "GPL",
+    "authors": [],
+    "autoload": {
+        "psr-4": {"\\": "lib/"}
+    },
+    "require": {
+        "php": ">5.5",
+        "michelf/php-markdown": "1.5.0"
+    }
+}

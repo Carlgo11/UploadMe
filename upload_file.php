@@ -1,6 +1,5 @@
 <?php
-
-include './lib/Mysql.php';
+include './lib/init.php';
 
 function getName($min, $max, $row) {
     $n = rand($min, $max);
@@ -16,7 +15,6 @@ function getName($min, $max, $row) {
     }
 }
 
-include './config.php';
 $temp = explode(".", $_FILES["file"]["name"]);
 $extension = end($temp);
 $filename = $_FILES['file']['name'];
@@ -45,14 +43,13 @@ if ($_FILES["file"]["error"] > 0) {
     $options = array('cost' => 12);
     $hashrmcode = password_hash($rmcode, PASSWORD_BCRYPT, $options);
 
-    $con = mysqli_connect($conf['mysql-url'], $conf['mysql-user'], $conf['mysql-password'], $conf['mysql-db']) or header('Location: ./mysql-error.php');
-    $q = "INSERT INTO `" . $conf['mysql-table'] . "` (`name`, `size`, `type`, `content`, `file-name`, `removalcode`) VALUES (?, ?, ?, ?, ?, ?);";
-    $query = $con->prepare($q);
+    $q = "INSERT INTO `" . $config['mysql-table'] . "` (`name`, `size`, `type`, `content`, `file-name`, `removalcode`) VALUES (?, ?, ?, ?, ?, ?);";
+    $query = $database->prepare($q);
     $query->bind_param("ssssss", $name, $_FILES['file']['size'], $_FILES['file']['type'], $content, $filename, $hashrmcode);
     $query->execute();
 
     if ($_POST['password'] != "") {
-        $m = $con->prepare("UPDATE `" . $conf['mysql-table'] . "` SET `salt`=?, `encryption`=? WHERE `name`=?");
+        $m = $database->prepare("UPDATE `" . $config['mysql-table'] . "` SET `salt`=?, `encryption`=? WHERE `name`=?");
         $g = TRUE;
         $m->bind_param("sss", $salt, $g, $name);
         $m->execute();

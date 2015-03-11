@@ -1,28 +1,22 @@
-<?php
+<?php return array (
+  # Site title. Applies for all pages importing res/head.php
+  'title' => 'UpLoadMe',
 
-# Site title. Applies for all pages importing res/head.php
-$conf['title'] = "UpLoadMe";
+  # database settings
+  'mysql-host' => 'localhost',
+  'mysql-username' => 'uploadme',
+  'mysql-password' => 'password',
+  'mysql-database' => 'uploadme',
 
-# Mysql url
-$conf['mysql-url'] = "example.com";
+  # table names
+  'mysql-table' => 'uploads',
+  'tr-table' => 'transparencyreport',
 
-# Mysql username
-$conf['mysql-user'] = "uploadme";
+  # target for contact data
+  'email-receiver' => 'admin@example.com',
 
-# Mysql password
-$conf['mysql-password'] = "password";
+  # ReCaptcha site key & secret key
+  'recaptcha-key' => '',
+  'recaptcha-secret' => '',
 
-# Mysql database
-$conf['mysql-db'] = "uploadme";
-
-# Mysql uploads table. (The table containing all uploaded files)
-$conf['mysql-table'] = "uploads";
-
-# Contact email. (Used in contact.php)
-$conf['email-reciver'] = "admin@example.com";
-
-# ReCaptcha site key
-$conf['recaptcha-key'] = "";
-
-# ReCaptcha site secret key
-$conf['recaptcha-secret'] = "";
+); ?>

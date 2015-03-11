@@ -1,2 +1,4 @@
 nbproject
 config.php
+vendor
+composer.lock

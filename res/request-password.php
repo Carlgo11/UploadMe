@@ -1,14 +1,10 @@
 <?php
-include './res/head.php';
+include './res/header.php';
 ?>
 <body>
     <div class="site-wrapper">
         <div class="site-wrapper-inner">
             <div class="cover-container">
-                <?php
-                include './res/navbar.php';
-                getNavBar();
-                ?>
                 <div class="inner go">
                     <center>
                         <?php if (isset($error) && $error == 0) {
