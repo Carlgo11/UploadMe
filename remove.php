@@ -1,24 +1,21 @@
 <?php
-include './res/head.php';
-if (isset($_POST['postbut'])) {
-    include 'config.php';
-    $con = mysqli_connect($conf['mysql-url'], $conf['mysql-user'], $conf['mysql-password'], $conf['mysql-db']) or header('Location: ./mysql-error.php');
+include './res/header.php';
 
-    $s = "SELECT COUNT(*) AS num FROM `" . $conf['mysql-table'] . "` WHERE `name` = ?";
-    $query = $con->prepare($s);
+if (isset($_POST['postbut'])) {
+    $s = "SELECT COUNT(*) AS num FROM `" . $config['mysql-table'] . "` WHERE `name` = ?";
+    $query = $database->prepare($s);
     $query->bind_param("s", $_POST['filename']);
     $query->execute();
     $result = $query->get_result();
 
-    $gethash = $con->prepare("SELECT `removalcode` FROM `" . $conf['mysql-table'] . "` WHERE `name` = ?");
+    $gethash = $database->prepare("SELECT `removalcode` FROM `" . $databasef['mysql-table'] . "` WHERE `name` = ?");
     $gethash->bind_param("s", $_POST["filename"]);
     $gethash->execute();
     $gethash->bind_result($hash);
     echo $hash;
     if ($row2 = $gethash->fetch()) {
         if (password_verify($_POST['rmcode'], $hash)) {
-            $con = mysqli_connect($conf['mysql-url'], $conf['mysql-user'], $conf['mysql-password'], $conf['mysql-db']) or header('Location: ./mysql-error.php');
-            $q1 = $con->prepare("DELETE FROM `" . $conf['mysql-table'] . "` WHERE `name` = ?");
+            $q1 = $database->prepare("DELETE FROM `" . $config['mysql-table'] . "` WHERE `name` = ?");
             $q1->bind_param("s", $_POST['filename']);
             $q1->execute();
             $output = "File removed. It's like it never existed!";
@@ -26,11 +23,6 @@ if (isset($_POST['postbut'])) {
     }
 }
 ?>
-<body>
-    <?php
-    include './res/navbar.php';
-    getNavBar("remove");
-    ?>
     <div class="content">
         <center>
             <?php if (isset($output) && $output != null) { ?>
@@ -60,10 +52,9 @@ if (isset($_POST['postbut'])) {
             </form>
         </div>
     </div>
-    <?php include './res/footer.php'; ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/docs.min.js"></script>
     <script src="./js/disable.js"></script>
-</body>
-</html>
+
+<?php include './res/footer.php'; ?>

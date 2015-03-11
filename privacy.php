@@ -1,11 +1,5 @@
 <?php
-include 'config.php';
-include './res/head.php';
-?>
-<body>
-<?php
-include './res/navbar.php';
-getNavBar("privacy")
+include './res/header.php';
 ?>
 <div class="header">
     <h1>Privacy</h1>
@@ -17,4 +11,3 @@ getNavBar("privacy")
     ?>
 </div>
 <?php include './res/footer.php'; ?>
-</body>

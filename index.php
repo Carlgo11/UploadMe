@@ -1,17 +1,11 @@
-<?php
-include 'config.php';
-include './res/indexhead.php';
-?>
-<body>
-<?php
-include './res/navbar.php';
-getNavBar("home");
-?>
+<?php include 'res/header.php'; ?>
+
 <div class="notification-shape shape-box" id="notification-shape" data-path-to="m 0,0 500,0 0,500 -500,0 z">
     <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 500 500" preserveAspectRatio="none">
         <path d="m 0,0 500,0 0,500 0,-500 z"/>
     </svg>
 </div>
+
 <div class="content">
     <div class="home-picture" style="background-image: url('./res/media/<?php echo rand(1, 6) ?>.jpg');">
         <div class="center-form home-form">
@@ -58,11 +52,12 @@ getNavBar("home");
         </div>
     </div>
 </div>
-<?php include './res/footer.php'; ?>
+
 <script src="./js/docs.min.js"></script>
 <script src="./js/disable.js"></script>
 <script src="./js/classie.js"></script>
 <script src="./js/notificationFx.js"></script>
+
 <script>
     (function () {
         var svgshape = document.getElementById('notification-shape'),
@@ -96,5 +91,5 @@ getNavBar("home");
         }, 2400);
     })();
 </script>
-</body>
-</html>
+
+<?php include './res/footer.php'; ?>
