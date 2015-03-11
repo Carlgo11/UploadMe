@@ -3,7 +3,7 @@ include('./lib/init.php');
 
 if (isset($_GET['file']) && $_GET['file'] != null) {
     $file = $_GET['file'];
-    $query = $database->prepare("SELECT name, type, size, content, `file-name`, encryption, salt FROM `" . $conf['mysql-table'] . "` WHERE `name` = ?");
+    $query = $database->prepare("SELECT name, type, size, content, `file-name`, encryption, salt FROM `" . $config['mysql-table'] . "` WHERE `name` = ?");
     $query->bind_param("s", $_GET['file']);
     $query->execute();
     $query->bind_result($name, $type, $size, $content, $filename, $encryption, $salt);
