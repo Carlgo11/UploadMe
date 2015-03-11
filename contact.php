@@ -30,7 +30,7 @@ if (isset($_POST['post'])) {
         $sent = true;
         $email = $_POST['email'];
         $message = $_POST['message'];
-        $to = $conf['email-reciver'];
+        $to = $conf['email-receiver'];
         $subject = "New mail from " . $email;
         $message = "Hello,\nYou've recived a new message from: " . $email . "\n\nMessage:\n" . $message;
         $headers = 'From: ' . $_POST['email'] . "\r\n" .

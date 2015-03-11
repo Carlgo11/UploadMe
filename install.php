@@ -87,7 +87,7 @@ if (file_exists('config.php')) {
                 <div class="panel-heading"><b class="panel-title">Other</b></div>
                 <div class="panel-body">
                     <i>Contact email is used for contact.php's contact form.</i>
-                    <input type='email' class="form-control" placeholder="Contact email" name="email-reciver">
+                    <input type='email' class="form-control" placeholder="Contact email" name="email-receiver">
                     <input type='text' class='form-control' placeholder="Page title" name="title" required="">
                 </div>
             </div>
