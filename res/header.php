@@ -35,7 +35,7 @@ include_once(__DIR__.'/../lib/init.php');
             $urlpath=parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
             $current=pathinfo($urlpath, $component);
             
-            $navs=array(""=>"Home", "contact.php"=>"Kontakt", "remove.php"=>"Remove", "privacy.php"=>"Privacy");
+            $navs=array(""=>"Home", "contact.php"=>"Contact", "remove.php"=>"Remove", "privacy.php"=>"Privacy");
             foreach($navs as $file => $label) {
                 $page=pathinfo($file, $component);
                 if ($page == $current) {
