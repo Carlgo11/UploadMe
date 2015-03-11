@@ -40,6 +40,4 @@ if (!$database) die(error(500, "Database Error", "Cant connect to database"));
 
 session_start();
 
-define("DEBUG", 1);
-
 ?>
