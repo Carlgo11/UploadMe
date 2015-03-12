@@ -23,7 +23,7 @@ class Mysql {
             
         }
         if (!($accepted || $total) == 0) {
-            $p = $accepted / $total;
+            $p = $accepted / $total*10;
         } else {
             $p = 0;
         }
