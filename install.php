@@ -91,7 +91,7 @@ if (file_exists('config.php')) {
                     <input type='text' class='form-control' placeholder="Page title" name="title" required="">
                 </div>
             </div>
-            <button class='btn btn-lg btn-success' type="submit" name="submit">Install <span
+            <button class='btn btn-lg btn-success' type="submit" name="submit">Install<span
                     class="glyphicon glyphicon-download-alt" aria-hidden='true'></span></button>
         </form>
     </div>
