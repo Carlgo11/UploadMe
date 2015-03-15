@@ -8,14 +8,16 @@ if (isset($_POST['postbut'])) {
     $query->execute();
     $result = $query->get_result();
 
-    $gethash = $database->prepare("SELECT `removalcode` FROM `" . $databasef['mysql-table'] . "` WHERE `name` = ?");
+    $gethash = $database->prepare("SELECT `removalcode` FROM `" . $config['mysql-table'] . "` WHERE `name` = ?");
     $gethash->bind_param("s", $_POST["filename"]);
     $gethash->execute();
     $gethash->bind_result($hash);
-    echo $hash;
+
     if ($row2 = $gethash->fetch()) {
         if (password_verify($_POST['rmcode'], $hash)) {
-            $q1 = $database->prepare("DELETE FROM `" . $config['mysql-table'] . "` WHERE `name` = ?");
+            $st = "DELETE FROM `" . $config['mysql-table'] . "` WHERE `name` = ?";
+            echo $st;
+            $q1 = $database->prepare($st);
             $q1->bind_param("s", $_POST['filename']);
             $q1->execute();
             $output = "File removed. It's like it never existed!";
@@ -40,7 +42,7 @@ if (isset($_POST['postbut'])) {
             <br>
             Enter that code below to remove your file.
             <br>
-            If you did not upload the file please go to the <a href="./privacy.php">privacy</a> tab.
+            If you did not upload the file please go to the <a href="./privacy">privacy</a> tab.
         </p>
 
         <div class="center-form">
