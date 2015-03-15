@@ -1,5 +1,16 @@
 <?php
+
 include('./lib/init.php');
+
+function download($type, $filename, $content) {
+    header("Accept-Ranges: bytes");
+    header("Keep-Alive: timeout=15, max=100");
+    header("Content-Disposition: attachment; filename=$filename");
+    header("Content-type: $type");
+    header("Content-Transfer-Encoding: binary");
+    header("Content-Description: File Transfer");
+    echo stripslashes($content);
+}
 
 if (isset($_GET['file']) && $_GET['file'] != null) {
     $file = $_GET['file'];
@@ -8,7 +19,7 @@ if (isset($_GET['file']) && $_GET['file'] != null) {
     $query->execute();
     $query->bind_result($name, $type, $size, $content, $filename, $encryption, $salt);
     if ($row = $query->fetch()) {
-
+        
     }
     if ($encryption != NULL) {
         if (isset($_POST['password'])) {
@@ -24,13 +35,7 @@ if (isset($_GET['file']) && $_GET['file'] != null) {
                 } else {
                     $filename = Encryption::decrypt($filename, $_POST['password'], $salt);
                 }
-                header("Accept-Ranges: bytes");
-                header("Keep-Alive: timeout=15, max=100");
-                header("Content-Disposition: attachment; filename=$filename");
-                header("Content-type: $type");
-                header("Content-Transfer-Encoding: binary");
-                header("Content-Description: File Transfer");
-                echo stripslashes($content);
+                download($type, $filename, $content);
             }
         } else {
             //Request password
@@ -40,16 +45,10 @@ if (isset($_GET['file']) && $_GET['file'] != null) {
         if ($filename == NULL) {
             $filename = $name;
         }
-        if($name == NULL && $content == NULL){
+        if ($name == NULL && $content == NULL) {
             header("Location: index.php");
-        }else{
-        header("Accept-Ranges: bytes");
-        header("Keep-Alive: timeout=15, max=100");
-        header("Content-Disposition: attachment; filename=$filename");
-        header("Content-type: $type");
-        header("Content-Transfer-Encoding: binary");
-        header("Content-Description: File Transfer");
-        echo stripslashes($content);
+        } else {
+            download($type, $filename, $content);
         }
     }
 } else {
