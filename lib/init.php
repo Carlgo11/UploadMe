@@ -36,7 +36,7 @@ if (file_exists(__DIR__.'/../config.php')) {
 }
 
 $database = mysqli_connect($config['mysql-host'], $config['mysql-username'], $config['mysql-password'], $config['mysql-database']);
-if (!$database) die(error(500, "Database Error", "Cant connect to database"));
+if (!$database) die(error(500, "Database Error", "Can not connect to database"));
 
 session_start();
 
