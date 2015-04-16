@@ -9,13 +9,17 @@
 <div class="content">
     <div class="home-picture" style="background-image: url('./res/media/<?php echo rand(1, 6) ?>.jpg');">
         <div class="center-form home-form">
-            <form action="./upload_file.php" method="post" enctype="multipart/form-data">
-                <input class="btn btn-success upload" data-filename-placement="inside" id="file" name="file"
-                       type="file"/>
-                <br>
-                <input class="form-control" type="password" autofocus="" placeholder="Password (Optional)"
-                       id="password" name="password" value="">
-                <input type="submit" name="submit" value="Upload" id="submit" class="btn btn-lg btn-default submit">
+            <form id="upload" action="./upload_file.php" method="post" enctype="multipart/form-data">
+                <div id="drop">
+                    Drop Here
+
+                    <a>Browse</a>
+                    <input type="file" name="upl" multiple />
+                </div>
+
+                <ul>
+                    <!-- The file uploads will be shown here -->
+                </ul>
             </form>
         </div>
     </div>
@@ -91,5 +95,12 @@
         }, 2400);
     })();
 </script>
+
+<!-- jQuery Upload Form -->
+<script src="js/jquery-upload/jquery.knob.min.js"></script>
+<script src="js/jquery-upload/jquery.ui.widget.js"></script>
+<script src="js/jquery-upload/jquery.iframe-transport.js"></script>
+<script src="js/jquery-upload/jquery.fileupload.js"></script>
+<script src="js/jquery-upload/upload.js"></script>
 
 <?php include './res/footer.php'; ?>
