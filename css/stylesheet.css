@@ -61,29 +61,12 @@ nav {
     padding-bottom: 10px;
 }
 
-.home-picture {
-    background: no-repeat center;
-    background-size: 100%;
-    margin-right: -16px;
+#upload, .complement {
+    display: inline-block;
 }
 
-.center-form {
-    max-width: 300px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.home-form {
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-
-.center-form .upload {
-    width: 100%;
-}
-
-.center-form .submit {
-    margin-top: 20px;
+.complement {
+    width: 70%;
 }
 
 h1.home {
@@ -98,8 +81,8 @@ h1.home {
 
 .glyphicon {
     font-size: 35px;
-    color:#5CB85C;
-    border-color:#4CAE4C;
+    color: #5CB85C;
+    border-color: #4CAE4C;
 }
 
 .contact {
@@ -166,24 +149,23 @@ footer * {
     The file upload form
 -----------------------------*/
 
+#upload {
+    font-family: 'PT Sans Narrow', sans-serif;
+    background-color: #373A3D;
 
-#upload{
-    font-family:'PT Sans Narrow', sans-serif;
-    background-color:#373a3d;
+    background-image: -webkit-linear-gradient(top, #373A3D, #313437);
+    background-image: -moz-linear-gradient(top, #373A3D, #313437);
+    background-image: linear-gradient(top, #373A3D, #313437);
 
-    background-image:-webkit-linear-gradient(top, #373a3d, #313437);
-    background-image:-moz-linear-gradient(top, #373a3d, #313437);
-    background-image:linear-gradient(top, #373a3d, #313437);
+    width: 250px;
+    padding: 50px 30px 50px 30px;
+    border-radius: 3px;
 
-    width:250px;
-    padding:30px;
-    border-radius:3px;
-
-    margin:200px auto 100px;
+    margin: 30px 0 30px 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-#drop{
+#drop {
     background-color: #2E3134;
     padding: 40px 50px;
     margin-bottom: 30px;
@@ -193,59 +175,59 @@ footer * {
     text-align: center;
     text-transform: uppercase;
 
-    font-size:16px;
-    font-weight:bold;
-    color:#7f858a;
+    font-size: 16px;
+    font-weight: bold;
+    color: #7f858a;
 }
 
-#drop a{
-    background-color:#007a96;
-    padding:12px 26px;
-    color:#fff;
-    font-size:14px;
-    border-radius:2px;
-    cursor:pointer;
-    display:inline-block;
-    margin-top:12px;
-    line-height:1;
+#drop a {
+    background-color: #007a96;
+    padding: 12px 26px;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 2px;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 12px;
+    line-height: 1;
 }
 
-#drop a:hover{
-    background-color:#0986a3;
+#drop a:hover {
+    background-color: #0986a3;
 }
 
-#drop input{
-    display:none;
+#drop input {
+    display: none;
 }
 
-#upload ul{
-    list-style:none;
-    margin:0 -30px;
-    border-top:1px solid #2b2e31;
-    border-bottom:1px solid #3d4043;
+#upload ul {
+    list-style: none;
+    margin: 0 -30px;
+    border-top: 1px solid #2b2e31;
+    border-bottom: 1px solid #3d4043;
 }
 
-#upload ul li{
+#upload ul li {
 
-    background-color:#333639;
+    background-color: #333639;
 
-    background-image:-webkit-linear-gradient(top, #333639, #303335);
-    background-image:-moz-linear-gradient(top, #333639, #303335);
-    background-image:linear-gradient(top, #333639, #303335);
+    background-image: -webkit-linear-gradient(top, #333639, #303335);
+    background-image: -moz-linear-gradient(top, #333639, #303335);
+    background-image: linear-gradient(top, #333639, #303335);
 
-    border-top:1px solid #3d4043;
-    border-bottom:1px solid #2b2e31;
-    padding:15px;
+    border-top: 1px solid #3d4043;
+    border-bottom: 1px solid #2b2e31;
+    padding: 15px;
     height: 52px;
 
     position: relative;
 }
 
-#upload ul li input{
+#upload ul li input {
     display: none;
 }
 
-#upload ul li p{
+#upload ul li p {
     width: 144px;
     overflow: hidden;
     white-space: nowrap;
@@ -257,36 +239,36 @@ footer * {
     left: 100px;
 }
 
-#upload ul li i{
+#upload ul li i {
     font-weight: normal;
-    font-style:normal;
-    color:#7f7f7f;
-    display:block;
+    font-style: normal;
+    color: #7f7f7f;
+    display: block;
 }
 
-#upload ul li canvas{
+#upload ul li canvas {
     top: 15px;
     left: 32px;
     position: absolute;
 }
 
-#upload ul li span{
+#upload ul li span {
     width: 15px;
     height: 12px;
     background: url('/res/media/icons.png') no-repeat;
     position: absolute;
     top: 34px;
     right: 33px;
-    cursor:pointer;
+    cursor: pointer;
 }
 
-#upload ul li.working span{
+#upload ul li.working span {
     height: 16px;
     background-position: 0 -12px;
 }
 
-#upload ul li.error p{
-    color:red;
+#upload ul li.error p {
+    color: red;
 }
 
 @media (min-width: 600px) {
@@ -317,13 +299,12 @@ footer * {
         margin-left: 20px;
     }
 
-    .home-form {
-        padding-top: 200px;
-        padding-bottom: 200px;
+    #upload {
+        width: 29%;
     }
 
-    .upload-form {
-        max-width: 35%;
+    .complement {
+        vertical-align: top;
     }
 
     .header {

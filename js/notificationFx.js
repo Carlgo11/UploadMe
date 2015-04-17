@@ -70,7 +70,7 @@
         // callbacks
         onClose : function() { return false; },
         onOpen : function() { return false; }
-    }
+    };
 
     /**
      * init function
@@ -102,7 +102,7 @@
 
         // init events
         this._initEvents();
-    }
+    };
 
     /**
      * init events
@@ -111,7 +111,7 @@
         var self = this;
         // dismiss notification
         this.ntf.querySelector( '.ns-close' ).addEventListener( 'click', function() { self.dismiss(); } );
-    }
+    };
 
     /**
      * show the notification
@@ -122,7 +122,7 @@
         classie.add( this.ntf, 'ns-show' );
         if (typeof this.options.onOpen === 'function')
             this.options.onOpen();
-    }
+    };
 
     /**
      * dismiss the notification
@@ -155,7 +155,7 @@
         else {
             onEndAnimationFn();
         }
-    }
+    };
 
     /**
      * add to global namespace

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+<body>
+<form name="upload" id="upload" action="./upload_file.php" method="post" enctype="multipart/form-data">
+    <div id="drop">
+        Drop Here
+
+        <a>Browse</a>
+        <input type="file" name="upl" multiple/>
+    </div>
+
+    <ul>
+        <!-- The file uploads will be shown here -->
+    </ul>
+</form>
+
+<!-- jQuery Upload Form -->
+<script src="js/jquery-upload/jquery.knob.min.js"></script>
+<script src="js/jquery-upload/jquery.ui.widget.js"></script>
+<script src="js/jquery-upload/jquery.iframe-transport.js"></script>
+<script src="js/jquery-upload/jquery.fileupload.js"></script>
+<script src="js/jquery-upload/upload.js"></script>
+</body>
+</html>

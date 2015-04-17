@@ -7,52 +7,50 @@
 </div>
 
 <div class="content">
-    <div class="home-picture" style="background-image: url('./res/media/<?php echo rand(1, 6) ?>.jpg');">
-        <div class="center-form home-form">
-            <form id="upload" action="./upload_file.php" method="post" enctype="multipart/form-data">
-                <div id="drop">
-                    Drop Here
+    <form name="upload" id="upload" action="./upload_file.php" method="post" enctype="multipart/form-data">
+        <div id="drop">
+            Drop Here
 
-                    <a>Browse</a>
-                    <input type="file" name="upl" multiple />
-                </div>
-
-                <ul>
-                    <!-- The file uploads will be shown here -->
-                </ul>
-            </form>
+            <a>Browse</a>
+            <input type="file" name="upl" multiple/>
         </div>
-    </div>
 
-    <h1 class="home">Your files anywhere, securely</h1>
+        <ul>
+            <!-- The file uploads will be shown here -->
+        </ul>
+    </form>
 
-    <p class="lead">
-        With UpLoadMe you can share your personal files with friends<br>without needing to give out your
-        personal information!
-    </p>
+    <div class="complement">
+        <h1 class="home">Your files anywhere, securely</h1>
 
-    <div class="row">
-        <div class="col-md-4">
-            <span class="glyphicon glyphicon-folder-open"></span>
+        <p class="lead">
+            With UpLoadMe you can share your personal files with friends<br>without needing to give out your
+            personal information!
+        </p>
 
-            <h3>Simple</h3>
+        <div class="row">
+            <div class="col-md-4">
+                <span class="glyphicon glyphicon-folder-open"></span>
 
-            <p>Simply drop a file in the green area and click Upload</p>
-        </div>
-        <div class="col-md-4">
-            <span class="glyphicon glyphicon-eye-close"></span>
+                <h3>Simple</h3>
 
-            <h3>Private</h3>
+                <p>Simply drop a file in the green area and click Upload</p>
+            </div>
+            <div class="col-md-4">
+                <span class="glyphicon glyphicon-eye-close"></span>
 
-            <p>We don't store any information about you. No names, IP addresses or logs!</p>
-        </div>
-        <div class="col-md-4">
-            <span class="glyphicon glyphicon-lock"></span>
+                <h3>Private</h3>
 
-            <h3>Secure</h3>
+                <p>We don't store any information about you. No names, IP addresses or logs!</p>
+            </div>
+            <div class="col-md-4">
+                <span class="glyphicon glyphicon-lock"></span>
 
-            <p>Files with a password are encrypted as soon as they are uploaded. We can't see what the file contains
-                without the password.</p>
+                <h3>Secure</h3>
+
+                <p>Files with a password are encrypted as soon as they are uploaded. We can't see what the file contains
+                    without the password.</p>
+            </div>
         </div>
     </div>
 </div>
