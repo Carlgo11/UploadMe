@@ -74,7 +74,7 @@
             // Create the notification
             var notification = new NotificationFx({
                 wrapper: svgshape,
-                message: '<p><span class="icon glyphicon glyphicon-cloud"></span> UploadMe is also available at <a href="http://ufcefwubqauib6of.onion">ufcefwubqauib6of.onion</a></p>',
+                message: '<?php echo lang("onion-notification")?>',
                 layout: 'other',
                 effect: 'cornerexpand',
                 type: 'notice', // notice, warning or error

@@ -1,4 +1,5 @@
 {
     "title": "UpLoadMe",
-    "password" : "Password (Optional)"
+    "password" : "Password (Optional)",
+    "onion-notification" : "<p><span class=\"icon glyphicon glyphicon-cloud\"></span> UploadMe is also available at <a href=\"http://ufcefwubqauib6of.onion\">ufcefwubqauib6of.onion</a></p>"
 }
