@@ -1,9 +1,9 @@
 <?php
 
 function error($status, $title, $message) {
+	global $config;
 	header($_SERVER["SERVER_PROTOCOL"]." ".$status." ".$title);
 	include(__DIR__.'/../res/header.php');
-	// TODO: Error messages look shitty
 	echo('<div class="content">');
 	echo('<h2>Whoops, that wasn\'t supposed to happen!</h2><br>'.PHP_EOL);
 	echo('<img src="./res/media/errors/'.rand(1, 11).'.jpg" width="500"/><br><br>'.PHP_EOL);
@@ -42,7 +42,7 @@ if (file_exists((__DIR__.'/../res/json.php'))) {
 }
 
 $database = mysqli_connect($config['mysql-host'], $config['mysql-username'], $config['mysql-password'], $config['mysql-database']);
-if (!$database) die(error(500, "Database Error", "Cant connect to database"));
+if (!$database) die(error(500, "Database Error", "Can not connect to database"));
 
 session_start();
 

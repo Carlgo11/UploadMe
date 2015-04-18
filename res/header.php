@@ -1,6 +1,7 @@
 <?php
 include_once(__DIR__.'/../lib/init.php');
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
