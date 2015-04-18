@@ -7,7 +7,7 @@ include './res/header.php';
 <div class="privacy">
     <?php
     include './res/markdown.php';
-    echo markdown("./res/", "privacy.txt");
+    echo markdown_file("./res/", "privacy.txt");
     ?>
 </div>
 <?php include './res/footer.php'; ?>

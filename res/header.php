@@ -11,7 +11,7 @@ include_once(__DIR__.'/../lib/init.php');
     <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
     <META HTTP-EQUIV="Expires" CONTENT="-1">
     <link rel="shortcut icon" type="image/icon" href="./res/media/logo.png"/>
-    <title><?php echo htmlspecialchars((isset($title)&&$title?$title.' - ':'').$config['title']); ?></title>
+    <title><?php echo htmlspecialchars((isset($title)&&$title?$title.' - ':'').lang('title')); ?></title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./css/ns-default.css">

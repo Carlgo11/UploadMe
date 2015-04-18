@@ -35,6 +35,12 @@ if (file_exists(__DIR__.'/../config.php')) {
 	die(error(500, "Configuration Error", "The Configuration file could not be found"));
 }
 
+if (file_exists((__DIR__.'/../res/json.php'))) {
+    include __DIR__.'/../res/json.php';
+}else{
+    die(error(500, "Configuration Error", "language file not found"));
+}
+
 $database = mysqli_connect($config['mysql-host'], $config['mysql-username'], $config['mysql-password'], $config['mysql-database']);
 if (!$database) die(error(500, "Database Error", "Cant connect to database"));
 

@@ -18,6 +18,7 @@ if (isset($_POST['postbut'])) {
             $st = "DELETE FROM `" . $config['mysql-table'] . "` WHERE `name` = ?";
             echo $st;
             $q1 = $database->prepare($st);
+            var_dump($database->error);
             $q1->bind_param("s", $_POST['filename']);
             $q1->execute();
             $output = "File removed. It's like it never existed!";

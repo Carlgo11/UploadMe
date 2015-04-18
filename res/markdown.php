@@ -6,8 +6,14 @@ spl_autoload_register(function($class) {
 
 use \Michelf\Markdown;
 
-function markdown($dir, $file) {
-    $text = file_get_contents($dir.$file);
+function markdown_file($dir, $file) {
+    $text = file_get_contents($dir . $file);
+    $html = Markdown::defaultTransform($text);
+
+    return $html;
+}
+
+function markdown($text) {
     $html = Markdown::defaultTransform($text);
 
     return $html;

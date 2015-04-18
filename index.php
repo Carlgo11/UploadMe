@@ -1,4 +1,4 @@
-<?php include 'res/header.php'; ?>
+<?php include __DIR__.'/res/header.php';?>
 
 <div class="notification-shape shape-box" id="notification-shape" data-path-to="m 0,0 500,0 0,500 -500,0 z">
     <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 500 500" preserveAspectRatio="none">
@@ -13,7 +13,7 @@
                 <input class="btn btn-success upload" data-filename-placement="inside" id="file" name="file"
                        type="file"/>
                 <br>
-                <input class="form-control" type="password" autofocus="" placeholder="Password (Optional)"
+                    <input class="form-control" type="password" autofocus="" placeholder="<?php echo lang("password")?>"
                        id="password" name="password" value="">
                 <input type="submit" name="submit" value="Upload" id="submit" class="btn btn-lg btn-default submit">
             </form>
