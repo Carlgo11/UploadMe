@@ -7,18 +7,20 @@
 </div>
 
 <div class="content">
-    <form name="upload" id="upload" action="./upload_file.php" method="post" enctype="multipart/form-data">
-        <div id="drop">
-            Drop Here
+    <div class="home-picture" style="background-image: url('./res/media/<?php echo rand(1, 6) ?>.jpg');">
+        <form name="upload" id="upload" action="./upload_file.php" method="post" enctype="multipart/form-data">
+            <div id="drop">
+                Drop Here
 
-            <a>Browse</a>
-            <input type="file" name="upl" multiple/>
-        </div>
+                <a>Browse</a>
+                <input type="file" name="upl" multiple/>
+            </div>
 
-        <ul>
-            <!-- The file uploads will be shown here -->
-        </ul>
-    </form>
+            <ul>
+                <!-- The file uploads will be shown here -->
+            </ul>
+        </form>
+    </div>
 
     <div class="complement">
         <h1 class="home">Your files anywhere, securely</h1>

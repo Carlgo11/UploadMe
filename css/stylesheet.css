@@ -61,6 +61,12 @@ nav {
     padding-bottom: 10px;
 }
 
+.home-picture {
+    background: no-repeat center;
+    background-size: 100%;
+    margin-right: -16px;
+}
+
 #upload, .complement {
     display: inline-block;
 }
