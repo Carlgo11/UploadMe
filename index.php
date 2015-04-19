@@ -11,7 +11,7 @@
         <form name="upload" id="upload" action="./upload_file.php" method="post" enctype="multipart/form-data">
             <div id="drop">
                 Drop Here
-
+                <br>
                 <a>Browse</a>
                 <input type="file" name="upl" multiple/>
             </div>
