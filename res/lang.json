@@ -1,5 +1,14 @@
 {
     "title": "UpLoadMe",
+    "home" : "Home",
+    "contact" : "Contact",
+    "remove" : "Remove",
+    "privacy" : "Privacy",
     "password" : "Password (Optional)",
-    "onion-notification" : "<p><span class=\"icon glyphicon glyphicon-cloud\"></span> UploadMe is also available at <a href=\"http://ufcefwubqauib6of.onion\">ufcefwubqauib6of.onion</a></p>"
+    "incorrect-password" : "<div class=\"alert alert-danger\"><h3>Incorrect password!</h3><p>The password you entered is incorrect. Please try again.</p></div>",
+    "enter-decryption-password" : "<h1>Please enter the decryption password.</h1><br><p class=\"lead\">The file you requested is encrypted with a password by the creator.</p><p>Please enter the decryption password in the box below:</p>",
+    "download" : "Download",
+    "onion-notification" : "<p><span class=\"icon glyphicon glyphicon-cloud\"></span> UploadMe is also available at <a href=\"http://ufcefwubqauib6of.onion\">ufcefwubqauib6of.onion</a></p>",
+    "header" : "<h1 class=\"home\">Your files anywhere, securely</h1>",
+    "lead" : "<p class=\"lead\"> With UpLoadMe you can share your personal files with friends<br>without needing to give out your personal information!</p>"
 }

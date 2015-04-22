@@ -7,27 +7,23 @@ include './res/header.php';
             <div class="cover-container">
                 <div class="inner go">
                     <center>
-                        <?php if (isset($error) && $error == 0) {
-                            ?>
-                            <div class="alert alert-danger"><h3>Incorrect password!</h3>
-
-                                <p>The password you entered is incorrect. Please try again.</p></div>
-                            <?php
+                        <?php
+                        if (isset($error) && $error == 0) {
+                            echo lang("incorrect-password");
                         }
+                        echo lang("enter-decryption-password");
                         ?>
-                        <h1>Please enter the decryption password.</h1><br>
-                        <p class="lead">The file you requested is encrypted with a password by the creator.</p>
-                        <p>Please enter the decryption password in the box below:</p>
+                        
                         <form action="" method="POST" enctype="multipart/form-data">
                             <input type="password" class="form-control" style="width: 400px;margin-bottom: 20px"
                                    autofocus="" required="" id="password" name="password">
 
-                            <button class='btn btn-lg btn-success' type="submit" name="download" id="download">Download
+                            <button class='btn btn-lg btn-success' type="submit" name="download" id="download"><?php echo lang("download"); ?>
                             </button>
                         </form>
                     </center>
                 </div>
-                <?php include './res/footer.php'; ?>
+<?php include './res/footer.php'; ?>
             </div>
         </div>
     </div>

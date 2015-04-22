@@ -20,12 +20,12 @@
         </div>
     </div>
 
-    <h1 class="home">Your files anywhere, securely</h1>
-
-    <p class="lead">
-        With UpLoadMe you can share your personal files with friends<br>without needing to give out your
-        personal information!
-    </p>
+    <?php
+    
+    echo lang("header");
+    
+    echo lang("lead");
+    ?>
 
     <div class="row">
         <div class="col-md-4">
@@ -53,7 +53,6 @@
     </div>
 </div>
 
-<script src="./js/docs.min.js"></script>
 <script src="./js/disable.js"></script>
 <script src="./js/classie.js"></script>
 <script src="./js/notificationFx.js"></script>

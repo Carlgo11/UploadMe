@@ -14,13 +14,13 @@ include_once(__DIR__.'/../lib/init.php');
     <link rel="shortcut icon" type="image/icon" href="./res/media/logo.png"/>
     <title><?php echo htmlspecialchars((isset($title)&&$title?$title.' - ':'').lang('title')); ?></title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/stylesheet.css">
     <link rel="stylesheet" type="text/css" href="./css/ns-default.css">
     <link rel="stylesheet" type="text/css" href="./css/ns-style-other.css">
-    <link href="./css/stylesheet.css" rel="stylesheet">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
     <script src="./js/bootstrap.file-input.js"></script>
     <script src="./js/modernizr.custom.js"></script>
     <script src="./js/snap.svg-min.js"></script>
@@ -36,7 +36,7 @@ include_once(__DIR__.'/../lib/init.php');
             $urlpath=parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
             $current=pathinfo($urlpath, $component);
             
-            $navs=array(""=>"Home", "contact.php"=>"Contact", "remove.php"=>"Remove", "privacy.php"=>"Privacy");
+            $navs=array(""=>  lang("home"), "contact.php"=>lang("contact"), "remove.php"=>lang("remove"), "privacy.php"=>lang("privacy"));
             foreach($navs as $file => $label) {
                 $page=pathinfo($file, $component);
                 if ($page == $current) {
@@ -47,6 +47,3 @@ include_once(__DIR__.'/../lib/init.php');
             } ?>
          </ul>
      </nav>
-
-
-

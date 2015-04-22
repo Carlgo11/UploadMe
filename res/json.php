@@ -12,7 +12,8 @@ function lang($name) {
     }
 }
 
-function lang_html($name) {
+function lang_markdown($name) {
+    include __DIR__."/../res/markdown.php";
     $output = lang($name);
     if ($output != null) {
         return(markdown($output));
