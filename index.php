@@ -6,8 +6,8 @@
     </svg>
 </div>
 
-<div class="content">
-    <div class="home-picture" style="background-image: url('./res/media/<?php echo rand(1, 6) ?>.jpg');">
+<div class="content" style="width:99.2%">
+    <div class="home-picture" style="background-image: url('./res/media/<?php echo rand(1, 6) ?>.jpg');width: 100.8%">
         <div class="center-form home-form">
             <form action="./upload_file.php" method="post" enctype="multipart/form-data">
                 <input class="btn btn-success upload" data-filename-placement="inside" id="file" name="file"
@@ -27,7 +27,7 @@
     echo lang("lead");
     ?>
 
-    <div class="row">
+    <div class="row"style="width: 100%">
         <div class="col-md-4">
             <span class="glyphicon glyphicon-folder-open"></span>
 
