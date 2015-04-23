@@ -47,8 +47,8 @@
 
             <h3>Secure</h3>
 
-            <p>Files with a password are encrypted as soon as they are uploaded. We can't see what the file contains
-                without the password.</p>
+            <p>Files with a password are encrypted as soon as they are uploaded.<br/>
+                We can't see what the file contains without the password.</p>
         </div>
     </div>
 </div>
