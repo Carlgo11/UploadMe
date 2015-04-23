@@ -14,6 +14,7 @@ if (isset($_POST['postbut'])) {
     $gethash->bind_result($hash);
 
     if ($row2 = $gethash->fetch()) {
+        require __DIR__."/lib/password.php";
         if (password_verify($_POST['rmcode'], $hash)) {
             $st = "DELETE FROM `" . $config['mysql-table'] . "` WHERE `name` = ?";
             echo $st;

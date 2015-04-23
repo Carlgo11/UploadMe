@@ -41,6 +41,7 @@ if ($_FILES["file"]["error"] > 0) {
     $rmcode = getName(32, 64, "removalcode");
 
     $options = array('cost' => 12);
+    require __DIR__."/lib/password.php";
     $hashrmcode = password_hash($rmcode, PASSWORD_BCRYPT, $options);
 
     $q = "INSERT INTO `" . $config['mysql-table'] . "` (`name`, `size`, `type`, `content`, `file-name`, `removalcode`) VALUES (?, ?, ?, ?, ?, ?);";
