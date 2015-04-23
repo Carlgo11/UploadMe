@@ -7,7 +7,7 @@
 </div>
 
 <div class="content" style="width:99.2%">
-    <div class="home-picture" style="background-image: url('./res/media/<?php echo rand(1, 6) ?>.jpg');width: 100.8%">
+    <div class="home-picture" style="background-image: url('./res/media/<?php echo rand(1, 9) ?>');width: 100.8%">
         <div class="center-form home-form">
             <form action="./upload_file.php" method="post" enctype="multipart/form-data">
                 <input class="btn btn-success upload" data-filename-placement="inside" id="file" name="file"
