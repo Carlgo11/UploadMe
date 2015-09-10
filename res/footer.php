@@ -3,7 +3,7 @@
             Made by some very dedicated <a href="https://github.com/Carlgo11/UploadMe/graphs/contributors">contributors</a>.
             The project is available on
             <a href="https://github.com/Carlgo11/UploadMe">GitHub</a>
-            Hosted by <a href="https://kbve.com/">KBVE</a>.
+            and is hosted by <a href="https://kbve.com/">KBVE</a>.
         </p>
     </footer>
 </body>
